@@ -1,10 +1,25 @@
 <div class='intro'>
-	<h1 class='intro__hed'>{{meta.title}}</h1>
+	<!--<h1 class='intro__hed'>{{meta.title}}</h1>
 	<p class='intro__dek'>{{meta.description}}</p>
 	<p class='intro__byline'>By
 		<a href='{{meta.author.url}}' target='_blank'>
 			<strong>{{meta.author.name}}</strong>
 		</a>
 	</p>
-	<time class='intro__time'>Month 2019</time>
+	<time class='intro__time'>Month 2019</time>-->
+	{{#each copy.intro}}
+		<p class='prose'>{{{value}}}</p>
+	{{/each}}
+
+	{{#each copy.otherKarens}}
+		<p class='prose'>{{{value}}}</p>
+	{{/each}}	
+
+	{{#each copy.futureKarens}}
+		<p class='prose'>{{{value}}}</p>
+	{{/each}}	
+
+	{{#each copy.maleKarens}}
+		<p class='prose'>{{{value}}}</p>
+	{{/each}}	
 </div>
