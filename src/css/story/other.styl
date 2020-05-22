@@ -1,0 +1,86 @@
+.other, .future
+    width 100%
+    margin-bottom 5rem
+
+    h2
+        font-family 'Impact'
+        text-transform uppercase
+        set-type-size('lil-daddy', true)
+        max-width 30rem
+        
+    .line
+        width 100%
+        border-top 3px solid $karen-red
+        margin-top -0.5rem
+        z-index set-index('overlay')
+
+    .brief
+        display flex
+        flex-direction row  
+        justify-content space-between  
+        margin-top -0.9rem
+
+        &__male
+           justify-content flex-end 
+
+        .text
+            width 50%
+            font-family $national
+            padding-right 2rem
+
+            .kicker
+                font-family 'Impact'
+                color $karen-red
+                text-transform uppercase
+                set-type-size('root', true)
+                letter-spacing 0.025rem 
+
+            .row
+                width 100%
+                border-top 1px solid $gray-light
+                display flex
+                flex-direction row
+                justify-content space-between
+                align-items center
+
+                &:last-of-type
+                  border-bottom 1px solid $gray-light  
+                
+                p
+                    set-type-size('small', true)
+                    padding 0
+                    margin 0.75rem 0
+                    font-family $mono
+                    text-transform uppercase
+                    width 20% 
+                    justify-content space-between
+
+                .title
+                    font-family 'Impact'
+                    set-type-size('root', true) 
+                    width 30%
+                    color $karen-red 
+                    letter-spacing 0.025rem
+
+                .corr
+                    width 30% 
+
+            select
+                border none  
+                width 6.3rem
+                background-color rgba($gray-light, 0.5)
+                appearance none 
+                border-radius 0px  
+                font-weight 700
+                text-indent 0.3rem
+                set-type-size('root', true)
+                background-image url('assets/images/dropdown-arrow.png')
+                background-repeat no-repeat
+                background-position 100% 50%
+                background-size 25px 25px
+
+
+    .charts
+        width 100%
+        padding 3rem 2rem
+        height 500px                     

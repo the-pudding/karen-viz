@@ -1,0 +1,88 @@
+.compare
+    width 100%
+    margin-bottom 5rem
+
+    .search-container
+        max-width $column-width
+        margin 0 auto
+        padding 1rem 1rem 0 1rem
+        font-family $national
+
+        .directions
+            display flex
+            flex-direction row
+            align-items baseline
+            width 100%
+            justify-content space-between
+
+            .title
+                font-family 'Impact'
+                text-transform uppercase
+                set-type-size('x-large', true)
+                letter-spacing 0.025rem
+
+            p
+                font-family $mono
+                set-type-size('x-small', true)  
+                text-transform uppercase 
+                margin 0 
+
+        input
+            width 100%
+            border 2px solid $off-black  
+            height 3rem  
+
+    .table-container
+        width 100%
+        max-width 60rem
+        margin 0 auto   
+        display flex
+        flex-direction row
+        justify-content space-between
+
+        .table 
+            width 45%
+
+            h3
+                font-family 'Impact'
+                set-type-size('xxx-large', true)
+                text-transform uppercase  
+                transform rotate(-90deg)  
+                margin 0
+                margin-left -10rem
+                text-align right
+
+            .row
+                width calc(100% - 3rem)
+                display flex
+                flex-direction row
+                border-bottom 1px solid $gray-light
+
+                .col10, .col20, .col30
+                    display flex
+                    flex-direction row 
+                    align-items baseline 
+                    width 33%
+                    padding-left 0.25rem
+
+                    .num
+                        font-family 'Impact'
+                        set-type-size('root', true)
+                        margin 0.75rem 0.5rem 0.75rem 0
+                        letter-spacing 0.025rem
+
+                    .name
+                        font-family $mono 
+                        text-transform uppercase
+                        set-type-size('small', true) 
+                        margin 0.75rem 0
+
+                &__master  
+                    border-bottom 3px solid $karen-red
+
+                    .title
+                       font-family 'Impact'
+                       set-type-size('large', true)
+                       margin 0  
+                       text-transform uppercase 
+                       letter-spacing 0.025rem        
