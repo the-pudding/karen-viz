@@ -33,7 +33,7 @@ function setupStickyHeader() {
 }
 
 function cleanData(data) {
-  const [annual, corr] = data;
+  const [annual, corr, karen] = data;
 
   const cleanA = annual.map((d) => ({
     ...d,
@@ -49,12 +49,22 @@ function cleanData(data) {
     corKaren30: +d.corKaren30,
   }));
 
-  return [cleanA, cleanC];
+  const cleanK = karen.map((d) => ({
+    ...d,
+    year: +d.year,
+    prop: +d.prop,
+  }));
+
+  return [cleanA, cleanC, cleanK];
 }
 
 function loadNameData() {
   return new Promise((resolve, reject) => {
-    const data = loadData(['byYear.csv', 'corrTable.csv']).then(cleanData);
+    const data = loadData([
+      'byYear.csv',
+      'corrTable.csv',
+      'justKaren.csv',
+    ]).then(cleanData);
     resolve(data);
   });
 }

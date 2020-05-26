@@ -11,6 +11,7 @@ const $dropdownM = $future.select('#male-select');
 // data
 let annual = null;
 let corr = null;
+let karen = null;
 
 const cutoff = 0.7;
 
@@ -39,11 +40,12 @@ function filterData(gender, time) {
     .nest()
     .key((d) => d.name)
     .entries(filteredNames)
-    // add the correlation number back in
+    // add the correlation number back in & karen data
     .map((d) => {
       const added = {
         ...d,
         corr: corrMap.get(d.key),
+        karen,
       };
 
       return added;
@@ -81,7 +83,8 @@ function setupChart() {
 function resize() {}
 
 function init(data) {
-  [annual, corr] = data;
+  [annual, corr, karen] = data;
+  console.log({ karen, data });
   $containers.each(setupChart);
 }
 

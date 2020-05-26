@@ -125,7 +125,13 @@ d3.selection.prototype.karenLine = function init(options) {
       render() {
         // offset chart for margins
         $vis.attr('transform', `translate(${MARGIN_LEFT}, ${MARGIN_TOP})`);
-        console.log({ val: data.values });
+
+        // add Karen line
+        $vis
+          .selectAll('.line-karen')
+          .data([data.karen])
+          .join((enter) => enter.append('path').attr('class', 'line-karen'))
+          .attr('d', line);
 
         $vis
           .selectAll('.line')
