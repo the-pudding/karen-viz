@@ -12,27 +12,39 @@ let corr = null;
 const cutoff = 0.7;
 
 function filterData(gender, time) {
+  const current = time === 'current';
   // first, find matches for the time frame & time frame
   const filteredCorr = corr
     .filter((d) => d.gender === gender)
-    .filter((d) =>
-      time === 'current' ? d.corKaren > cutoff : d.corKaren10 > cutoff
-    )
-    .sort((a, b) =>
-      time === 'current'
-        ? d3.descending(a.corKaren, b.corKaren)
-        : d3.descending(a.corKaren10, b.corKaren10)
-    )
-    .map((d) => d.name);
+    .filter((d) => (current ? d.corKaren > cutoff : d.corKaren10 > cutoff))
+    // return names and correlation for this chart
+    .map((d) => {
+      const thisCorr = current ? d.corKaren : d.corKaren10;
+      return [d.name, thisCorr];
+    });
+
+  // create lookup map to find correlation by name
+  const corrMap = new Map(filteredCorr);
+
+  const justNames = filteredCorr.map((d) => d[0]);
 
   // then filter our annual data to just include the appropriate names
-  const filteredNames = annual.filter((d) => filteredCorr.includes(d.name));
+  const filteredNames = annual.filter((d) => justNames.includes(d.name));
 
   // nest the data so we can make one chart per name
   const nestedNames = d3
     .nest()
     .key((d) => d.name)
-    .entries(filteredNames);
+    .entries(filteredNames)
+    // add the correlation number back in
+    .map((d) => {
+      const added = {
+        ...d,
+        corr: corrMap.get(d.key),
+      };
+
+      return added;
+    });
 
   return nestedNames;
 }
@@ -42,14 +54,18 @@ function setupChart() {
   const chartGender = $sel.attr('data-gender');
   const chartTime = $sel.attr('data-time');
 
-  const filtered = filterData(chartGender, chartTime);
-  console.log({ filtered });
+  // filter specific data for this section and sort by decreasing correlation
+  const filtered = filterData(chartGender, chartTime).sort((a, b) =>
+    d3.descending(a.corr, b.corr)
+  );
 
-  $sel
+  const theseCharts = $sel
     .selectAll('.chart__line')
     .data(filtered)
     .join((enter) => enter.append('div').attr('class', 'chart__line'))
     .karenLine();
+
+  theseCharts.forEach((chart) => chart.resize().render());
 }
 
 function resize() {}
