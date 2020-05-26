@@ -19,21 +19,26 @@ d3.selection.prototype.karenLine = function init(options) {
 
     // data
     let data = $chart.datum();
-    console.log({ data });
+    const decFormat = d3.format('.2f');
+    const yearFormat = d3.format('.0f');
 
     // dimensions
     let width = 0;
     let height = 0;
     const TEXT_HEIGHT = 100;
     const MARGIN_TOP = 0;
-    const MARGIN_BOTTOM = 0;
-    const MARGIN_LEFT = 0;
+    const MARGIN_BOTTOM = 15;
+    const MARGIN_LEFT = 30;
     const MARGIN_RIGHT = 0;
 
     // scales
     const scaleX = d3.scaleLinear();
     const scaleY = d3.scaleLinear();
     const MAX_PROP = 0.06;
+
+    // axes
+    let axisX = null;
+    let axisY = null;
 
     // shapes
     const line = d3.line();
@@ -85,6 +90,8 @@ d3.selection.prototype.karenLine = function init(options) {
 
         // create axis
         $axis = $svg.append('g').attr('class', 'g-axis');
+        $axis.append('g').attr('class', 'axis-x');
+        $axis.append('g').attr('class', 'axis-y');
 
         // setup viz group
         $vis = $svg.append('g').attr('class', 'g-vis');
@@ -102,8 +109,13 @@ d3.selection.prototype.karenLine = function init(options) {
           .attr('height', height + MARGIN_TOP + MARGIN_BOTTOM);
 
         // define specifics for x and y scales
-        scaleX.domain([1918, 2018]).range([0, width]);
-        scaleY.domain([0, MAX_PROP]).range([height, 0]);
+        scaleX.domain([1918, 2018]).range([0, width - MARGIN_LEFT]);
+        scaleY.domain([0, MAX_PROP]).range([height - MARGIN_BOTTOM, 0]);
+
+        // setup axes
+        axisX = d3.axisBottom(scaleX).ticks(2);
+
+        axisY = d3.axisLeft(scaleY).ticks(2);
 
         // define line attributes
         line.x((d) => scaleX(d.year)).y((d) => scaleY(d.prop));
@@ -121,6 +133,49 @@ d3.selection.prototype.karenLine = function init(options) {
           .join((enter) => enter.append('path').attr('class', 'line'))
           .attr('d', line)
           .attr('stroke', 'url(#linear-gradient)');
+
+        $axis
+          .select('.axis-x')
+          .call(
+            d3
+              .axisBottom(scaleX)
+              .tickSize(0)
+              .ticks(2)
+              .tickValues([1918, 2018])
+              .tickFormat(yearFormat)
+          )
+          .attr(
+            'transform',
+            `translate(${MARGIN_LEFT}, ${height - MARGIN_BOTTOM})`
+          )
+          // remove the X axis line
+          .call((g) => g.select('.domain').remove())
+          // move text slightly
+          .call((g) =>
+            g
+              .selectAll('.tick text')
+              .attr('y', 8)
+              .style('text-anchor', function (d) {
+                return this.parentNode.nextSibling ? 'start' : 'end';
+              })
+          );
+        $axis
+          .select('.axis-y')
+          .call(
+            d3
+              .axisLeft(scaleY)
+              .tickValues([0, 0.02, 0.04])
+              .tickSize(-width + MARGIN_LEFT)
+              .tickFormat((d, i) => {
+                if (i === 0) return 0;
+                return decFormat(d);
+              })
+          )
+          .attr('transform', `translate(${MARGIN_LEFT}, 0)`)
+          // remove the y axis line
+          .call((g) => g.select('.domain').remove())
+          .call((g) => g.selectAll('.tick text').attr('x', -8));
+
         return Chart;
       },
       // get / set data

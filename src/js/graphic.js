@@ -4,6 +4,9 @@ import './pudding-chart/line';
 // selections
 const $containers = d3.selectAll('.charts');
 const charts = [];
+const $future = d3.select('.future');
+const $dropdownF = $future.select('#female-select');
+const $dropdownM = $future.select('#male-select');
 
 // data
 let annual = null;
@@ -49,6 +52,8 @@ function filterData(gender, time) {
   return nestedNames;
 }
 
+function handleDropdown() {}
+
 function setupChart() {
   const $sel = d3.select(this);
   const chartGender = $sel.attr('data-gender');
@@ -66,6 +71,11 @@ function setupChart() {
     .karenLine();
 
   theseCharts.forEach((chart) => chart.resize().render());
+
+  const id = `${chartGender}-${chartTime}`;
+
+  charts.push([theseCharts]);
+  console.log({ charts });
 }
 
 function resize() {}
