@@ -2,45 +2,45 @@
     <h2>The Other</h2>
     <div class='line'></div>
     <div class='brief brief__female'>
-       <h2>Karens</h2>
-       <div class='text'>
-           {{#each copy.otherFKarens}}
+        <h2>Karens</h2>
+        <div class='text'>
+            {{#each copy.otherFKarens}}
             <p>{{{value}}}</p>
-           {{/each}}
-           {{#each copy.otherFDetails}}
-           <div class='row'>
-               <p class='title'>Your best replacement</p>
-               <p>{{{replaceName}}}</p>
-               <p class='corr'>Correlation: {{{replaceCorr}}}</p>
-           </div>
-           <div class='row'>
-               <p class='title'>The current anti-Karen</p>
-               <p>{{{antiName}}}</p>
-               <p class='corr'>Correlation: {{{antiCorr}}}</p>
-           </div>
-           {{/each}}
-       </div>
+            {{/each}}
+            {{#each copy.otherFDetails}}
+            <div class='row'>
+                <p class='title'>Your best replacement</p>
+                <p>{{{replaceName}}}</p>
+                <p class='corr'>Correlation: {{{replaceCorr}}}</p>
+            </div>
+            <div class='row'>
+                <p class='title'>The current anti-Karen</p>
+                <p>{{{antiName}}}</p>
+                <p class='corr'>Correlation: {{{antiCorr}}}</p>
+            </div>
+            {{/each}}
+        </div>
     </div>
-    <div class='charts charts__female'></div>
+    <div class='charts charts__female' data-gender='F' data-time='current'></div>
     <div class='brief brief__male'>
-       <div class='text'>
-           {{#each copy.otherMKarens}}
+        <div class='text'>
+            {{#each copy.otherMKarens}}
             <p>{{{value}}}</p>
-           {{/each}}
-           {{#each copy.otherMDetails}}
-           <div class='row'>
-               <p class='title'>Your best replacement</p>
-               <p>{{{replaceName}}}</p>
-               <p class='corr'>Correlation: {{{replaceCorr}}}</p>
-           </div>
-           <div class='row'>
-               <p class='title'>The current anti-Karen</p>
-               <p>{{{antiName}}}</p>
-               <p class='corr'>Correlation: {{{antiCorr}}}</p>
-           </div>
-           {{/each}}
-       </div>
+            {{/each}}
+            {{#each copy.otherMDetails}}
+            <div class='row'>
+                <p class='title'>Your best replacement</p>
+                <p>{{{replaceName}}}</p>
+                <p class='corr'>Correlation: {{{replaceCorr}}}</p>
+            </div>
+            <div class='row'>
+                <p class='title'>The current anti-Karen</p>
+                <p>{{{antiName}}}</p>
+                <p class='corr'>Correlation: {{{antiCorr}}}</p>
+            </div>
+            {{/each}}
+        </div>
     </div>
-    <div class='charts charts__male'></div>
+    <div class='charts charts__male' data-gender='M' data-time='current'></div>
     <div class='line'></div>
 </section>
