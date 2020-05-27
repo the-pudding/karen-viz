@@ -6,9 +6,9 @@ const $containers = $section.selectAll('.table');
 const $tables = $containers.selectAll('table');
 
 const COLUMNS = [
-  { title: '10 Years', prop: 'corKaren10' },
-  { title: '20 Years', prop: 'corKaren20' },
-  { title: '30 Years', prop: 'corKaren30' },
+  { title: '10 Years', prop: '0' },
+  { title: '20 Years', prop: '1' },
+  { title: '30 Years', prop: '2' },
 ];
 
 function setupTableHeader() {
@@ -22,6 +22,56 @@ function setupTableHeader() {
       .join((enter) => enter.append('th').text((d) => d.title));
 
     table.append('tbody');
+  });
+
+  setupTableBody();
+}
+
+function setupData(gender) {
+  const filtered = data.filter((d) => d.gender === gender);
+
+  const ten = filtered
+    .sort((a, b) => d3.descending(a.corKaren10, b.corKaren10))
+    .slice(0, 10)
+    .map((d) => `<span class='num'>${d.corKaren10}</span> ${d.name}`);
+
+  const twenty = filtered
+    .sort((a, b) => d3.descending(a.corKaren20, b.corKaren20))
+    .slice(0, 10)
+    .map((d) => `<span class='num'>${d.corKaren20}</span> ${d.name}`);
+
+  const thirty = filtered
+    .sort((a, b) => d3.descending(a.corKaren30, b.corKaren30))
+    .slice(0, 10)
+    .map((d) => `<span class='num'>${d.corKaren30}</span> ${d.name}`);
+
+  const zipped = d3.zip(ten, twenty, thirty);
+
+  return zipped;
+}
+
+function setupTableBody() {
+  const getRowData = (d, i) => {
+    return COLUMNS.map((c) => ({ value: d[c.prop], title: c.title }));
+  };
+
+  $tables.each(function (d) {
+    const table = d3.select(this);
+    const chartGender = table.attr('data-gender');
+
+    const tableData = setupData(chartGender);
+
+    const row = table
+      .select('tbody')
+      .selectAll('tr')
+      .data(tableData)
+      .join((enter) => enter.append('tr'));
+
+    row
+      .selectAll('td')
+      .data(getRowData, (d) => `${d.value}-${d.title}`)
+      .join((enter) => enter.append('td').attr('class', (d) => `${d.title}`))
+      .html((d) => d.value);
   });
 }
 
