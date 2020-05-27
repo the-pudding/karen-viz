@@ -10,13 +10,13 @@
             {{#each copy.futureFDetails}}
             <div class='row'>
                 <p class='title'>The Karen in <span class='year-change'>10</span> years</p>
-                <p>{{{replaceName}}}</p>
-                <p class='corr'>Correlation: {{{replaceCorr}}}</p>
+                <p class='name' data-condition='top'>{{{replaceName}}}</p>
+                <p class='corr' data-condition='top'>Correlation: {{{replaceCorr}}}</p>
             </div>
             <div class='row'>
                 <p class='title'>The future anti-Karen</p>
-                <p>{{{antiName}}}</p>
-                <p class='corr'>Correlation: {{{antiCorr}}}</p>
+                <p class='name' data-condition='bottom'>{{{antiName}}}</p>
+                <p class='corr' data-condition='bottom'>Correlation: {{{antiCorr}}}</p>
             </div>
             {{/each}}
         </div>
@@ -36,15 +36,15 @@
             <p>{{{value}}}</p>
             {{/each}}
             {{#each copy.futureMDetails}}
-            <div class='row'>
+            <div class='row' data-condition='top'>
                 <p class='title'>The Karen in <span class='year-change'>10</span> years</p>
-                <p>{{{replaceName}}}</p>
-                <p class='corr'>Correlation: {{{replaceCorr}}}</p>
+                <p class='name' data-condition='top'>{{{replaceName}}}</p>
+                <p class='corr' data-condition='top'>Correlation: {{{replaceCorr}}}</p>
             </div>
-            <div class='row'>
+            <div class='row' data-condition='bottom'>
                 <p class='title'>The future anti-Karen</p>
-                <p>{{{antiName}}}</p>
-                <p class='corr'>Correlation: {{{antiCorr}}}</p>
+                <p class='name' data-condition='bottom'>{{{antiName}}}</p>
+                <p class='corr' data-condition='bottom'>Correlation: {{{antiCorr}}}</p>
             </div>
             {{/each}}
         </div>

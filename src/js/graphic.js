@@ -10,13 +10,56 @@ const $future = d3.select('.future');
 const $futureContainers = $future.selectAll('.charts');
 const $dropdowns = $future.selectAll('select');
 const $buttons = d3.selectAll('.show-more');
+const $femaleTable = $future.select('.brief__female');
+const $maleTable = $future.select('.brief__male');
 
 // data
 let annual = null;
 let corr = null;
 let karen = null;
+let allExtremes = null;
 
 const cutoff = 0.7;
+
+function findExtremes(year) {
+  const col = `corKaren${year}`;
+
+  const male = corr.filter((d) => d.gender === 'M');
+  const female = corr.filter((d) => d.gender === 'F');
+
+  const sortedCorrF = female.sort((a, b) => d3.descending(a[col], b[col]));
+  const topF = [sortedCorrF.shift()].map((d) => ({
+    name: d.name,
+    corr: d[col],
+  }))[0];
+  const bottomF = [sortedCorrF.pop()].map((d) => ({
+    name: d.name,
+    corr: d[col],
+  }))[0];
+
+  const sortedCorrM = male.sort((a, b) => d3.descending(a[col], b[col]));
+  const topM = [sortedCorrM.shift()].map((d) => ({
+    name: d.name,
+    corr: d[col],
+  }))[0];
+  const bottomM = [sortedCorrM.pop()].map((d) => ({
+    name: d.name,
+    corr: d[col],
+  }))[0];
+
+  return {
+    female: { top: topF, bottom: bottomF },
+    male: { top: topM, bottom: bottomM },
+  };
+}
+
+function setupCalloutData() {
+  const tenYears = findExtremes(10);
+  const twentyYears = findExtremes(20);
+  const thirtyYears = findExtremes(30);
+
+  allExtremes = d3.zip([tenYears], [twentyYears], [thirtyYears]);
+}
 
 function filterData(gender, time) {
   const current = time === 'current';
@@ -61,6 +104,42 @@ function filterData(gender, time) {
   return nestedNames;
 }
 
+function updateTables(years) {
+  const allYears = [10, 20, 30];
+  const yearIndex = allYears.findIndex((d) => d === +years);
+
+  const femaleData = allExtremes[0][yearIndex].female;
+  const maleData = allExtremes[0][yearIndex].male;
+
+  const namesF = $femaleTable.selectAll('.name');
+  namesF.each(function (name) {
+    const thisName = d3.select(this);
+    const cond = thisName.attr('data-condition');
+    thisName.text(femaleData[cond].name);
+  });
+
+  const corrF = $femaleTable.selectAll('.corr');
+  corrF.each(function (corr) {
+    const thisCorr = d3.select(this);
+    const cond = thisCorr.attr('data-condition');
+    thisCorr.text(`Correlation: ${femaleData[cond].corr}`);
+  });
+
+  const namesM = $maleTable.selectAll('.name');
+  namesM.each(function (name) {
+    const thisName = d3.select(this);
+    const cond = thisName.attr('data-condition');
+    thisName.text(maleData[cond].name);
+  });
+
+  const corrM = $maleTable.selectAll('.corr');
+  corrM.each(function (corr) {
+    const thisCorr = d3.select(this);
+    const cond = thisCorr.attr('data-condition');
+    thisCorr.text(`Correlation: ${maleData[cond].corr}`);
+  });
+}
+
 function handleDropdown() {
   const val = d3.select(this).property('value');
 
@@ -82,8 +161,10 @@ function handleDropdown() {
     $sel.classed('is-clipped', tooMany);
     btn.classed('is-visible', tooMany);
 
+    // remove old charts
     $sel.selectAll('.chart__line').remove();
 
+    // create new ones
     const theseCharts = $sel
       .selectAll('.chart__line')
       .data(filtered)
@@ -98,6 +179,8 @@ function handleDropdown() {
     // change spans in table to match
     d3.selectAll('.year-change').text(val);
   });
+
+  updateTables(val);
 }
 
 function setupChart() {
@@ -167,6 +250,8 @@ function init(data) {
   [annual, corr, karen] = data;
   $containers.each(setupChart);
   setupDropdowns();
+  setupCalloutData();
+  updateTables(10);
   $buttons.on('click', handleButtonClick);
 }
 
