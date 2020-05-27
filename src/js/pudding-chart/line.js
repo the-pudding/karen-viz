@@ -26,9 +26,9 @@ d3.selection.prototype.karenLine = function init(options) {
     let width = 0;
     let height = 0;
     const TEXT_HEIGHT = 100;
-    const MARGIN_TOP = 0;
+    const MARGIN_TOP = 10;
     const MARGIN_BOTTOM = 15;
-    const MARGIN_LEFT = 35;
+    const MARGIN_LEFT = 33;
     const MARGIN_RIGHT = 0;
 
     // scales
@@ -79,7 +79,7 @@ d3.selection.prototype.karenLine = function init(options) {
       $chart.select('.chart-name').text(data.key);
       $chart
         .select('.chart-sub')
-        .html(`<span class='corr'>${data.corr}</span> correlation`);
+        .html(`<span class='corr'>${decFormat(data.corr)}</span> correlation`);
     }
 
     const Chart = {
@@ -109,7 +109,7 @@ d3.selection.prototype.karenLine = function init(options) {
         height =
           $chart.node().offsetHeight - MARGIN_TOP - MARGIN_BOTTOM - TEXT_HEIGHT;
         $svg
-          .attr('width', width + MARGIN_LEFT + MARGIN_RIGHT)
+          .attr('width', width)
           .attr('height', height + MARGIN_TOP + MARGIN_BOTTOM);
 
         // define specifics for x and y scales
@@ -159,7 +159,7 @@ d3.selection.prototype.karenLine = function init(options) {
           )
           .attr(
             'transform',
-            `translate(${MARGIN_LEFT}, ${height - MARGIN_BOTTOM})`
+            `translate(${MARGIN_LEFT}, ${height})`
           )
           // remove the X axis line
           .call((g) => g.select('.domain').remove())
@@ -177,14 +177,14 @@ d3.selection.prototype.karenLine = function init(options) {
           .call(
             d3
               .axisLeft(scaleY)
-              .tickValues([0, 0.02, 0.04])
+              .tickValues([0, 0.02, 0.04, 0.06])
               .tickSize(-width + MARGIN_LEFT)
               .tickFormat((d, i) => {
                 if (i === 0) return 0;
                 return decFormat(d);
               })
           )
-          .attr('transform', `translate(${MARGIN_LEFT}, 0)`)
+          .attr('transform', `translate(${MARGIN_LEFT}, ${MARGIN_TOP})`)
           // remove the y axis line
           .call((g) => g.select('.domain').remove())
           .call((g) => g.selectAll('.tick text').attr('x', -8));

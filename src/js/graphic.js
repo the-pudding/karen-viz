@@ -60,6 +60,7 @@ function filterData(gender, time) {
 
 function handleDropdown() {
   const val = d3.select(this).property('value');
+  console.log(val)
 
   $futureContainers.each(function (d, i) {
     const $sel = d3.select(this);
@@ -80,6 +81,9 @@ function handleDropdown() {
 
     // change both dropdowns to match
     $dropdowns.selectAll('option').property('selected', (d) => d === +val);
+
+    // change spans in table to match
+    d3.selectAll('.year-change').text(val)
   });
 }
 

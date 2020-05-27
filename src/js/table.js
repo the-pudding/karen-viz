@@ -1,4 +1,5 @@
 let data = null;
+const decFormat = d3.format('.2f');
 
 // selections
 const $section = d3.select('.compare');
@@ -6,9 +7,9 @@ const $containers = $section.selectAll('.table');
 const $tables = $containers.selectAll('table');
 
 const COLUMNS = [
-  { title: '10 Years', prop: '0' },
-  { title: '20 Years', prop: '1' },
-  { title: '30 Years', prop: '2' },
+  { title: 'In 10 Yrs', prop: '0' },
+  { title: 'In 20 Yrs', prop: '1' },
+  { title: 'In 30 Yrs', prop: '2' },
 ];
 
 function setupTableHeader() {
@@ -33,17 +34,17 @@ function setupData(gender) {
   const ten = filtered
     .sort((a, b) => d3.descending(a.corKaren10, b.corKaren10))
     .slice(0, 10)
-    .map((d) => `<span class='num'>${d.corKaren10}</span> ${d.name}`);
+    .map((d) => `<span class='num'>${decFormat(d.corKaren10)}</span> ${d.name}`);
 
   const twenty = filtered
     .sort((a, b) => d3.descending(a.corKaren20, b.corKaren20))
     .slice(0, 10)
-    .map((d) => `<span class='num'>${d.corKaren20}</span> ${d.name}`);
+    .map((d) => `<span class='num'>${decFormat(d.corKaren20)}</span> ${d.name}`);
 
   const thirty = filtered
     .sort((a, b) => d3.descending(a.corKaren30, b.corKaren30))
     .slice(0, 10)
-    .map((d) => `<span class='num'>${d.corKaren30}</span> ${d.name}`);
+    .map((d) => `<span class='num'>${decFormat(d.corKaren30)}</span> ${d.name}`);
 
   const zipped = d3.zip(ten, twenty, thirty);
 

@@ -4,8 +4,8 @@
 
     .search-container
         max-width $column-width
-        margin 0 auto
-        padding 1rem 1rem 0 1rem
+        margin 0 auto 3rem auto
+        padding 1rem
         font-family $national
 
         .directions
@@ -34,27 +34,37 @@
 
     .table-container
         width 100%
-        max-width 60rem
+        max-width 65rem
         margin 0 auto   
         display flex
         flex-direction row
         justify-content space-between
 
         .table 
-            width 45%
+            width 48%
             border-spacing 4rem
+            display flex
+            justify-content flex-end
+            position relative
 
             h3
                 font-family 'Impact'
                 set-type-size('xxx-large', true)
                 text-transform uppercase  
-                transform rotate(-90deg)  
-                margin 0
-                margin-left -10rem
+                transform rotate(-90deg)
+                transform-origin 0 0  
+                margin 15rem 0 0 0
+                position absolute
+                top 0
+                left 0
                 text-align right
+                width 15rem
+
+            table
+                width calc(100% - 3.5rem)   
 
             .row
-                width calc(100% - 3rem)
+                width 100%
                 display flex
                 flex-direction row
                 border-bottom 1px solid $gray-light
@@ -70,12 +80,12 @@
                 text-transform uppercase
                 set-type-size('small', true) 
                 margin 0.75rem 0
-                padding 0.25rem 0.5rem
+                padding 0.5rem 0.5rem
                 border-bottom 1px solid $gray-light
 
                 .num
                     font-family 'Impact'
-                    set-type-size('root', true)
+                    set-type-size('small', true)
                     margin 0.75rem 0.5rem 0.75rem 0
                     letter-spacing 0.025rem
 
