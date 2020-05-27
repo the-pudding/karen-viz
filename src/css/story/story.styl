@@ -11,15 +11,28 @@
         /* two rows */
         height 42rem
         overflow hidden
-   .show-more 
+    
+.btn-wrapper
+    width 10rem
+    margin 0 auto
+
+    .show-more 
         display none 
-        margin 1rem auto 2rem auto
-        background-color $bg 
-        color $gray
-        font-family $mono
+        margin 2rem auto 7rem auto
+        background-color rgba($gray-light, 0.5)
+        //border 1px solid $gray
+        height 3rem
+        width 100%
+        color $gray-dark
+        //font-family $mono
         text-transform uppercase
+        set-type-size('small', true)
+        font-weight 700
         &.is-visible 
             display block
+        &:hover
+            background-color $gray-light 
+            color $off-black
 
 .chart__line 
     max-width 15rem
