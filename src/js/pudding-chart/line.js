@@ -28,7 +28,7 @@ d3.selection.prototype.karenLine = function init(options) {
     const TEXT_HEIGHT = 100;
     const MARGIN_TOP = 0;
     const MARGIN_BOTTOM = 15;
-    const MARGIN_LEFT = 30;
+    const MARGIN_LEFT = 35;
     const MARGIN_RIGHT = 0;
 
     // scales
@@ -75,15 +75,19 @@ d3.selection.prototype.karenLine = function init(options) {
         .attr('stop-color', BOTTOM_COLOR);
     }
 
+    function updateChartDetails() {
+      $chart.select('.chart-name').text(data.key);
+      $chart
+        .select('.chart-sub')
+        .html(`<span class='corr'>${data.corr}</span> correlation`);
+    }
+
     const Chart = {
       // called once at start
       init() {
         // add specific name data
-        $chart.append('p').attr('class', 'chart-name').text(data.key);
-        $chart
-          .append('p')
-          .attr('class', 'chart-sub')
-          .html(`<span class='corr'>${data.corr}</span> correlation`);
+        $chart.append('p').attr('class', 'chart-name');
+        $chart.append('p').attr('class', 'chart-sub');
 
         // add an SVG
         $svg = $chart.append('svg').attr('class', 'chart-line');
@@ -123,21 +127,24 @@ d3.selection.prototype.karenLine = function init(options) {
       },
       // update scales and render chart
       render() {
+        updateChartDetails();
         // offset chart for margins
         $vis.attr('transform', `translate(${MARGIN_LEFT}, ${MARGIN_TOP})`);
 
         // add Karen line
         $vis
           .selectAll('.line-karen')
-          .data([data.karen])
-          .join((enter) => enter.append('path').attr('class', 'line-karen'))
-          .attr('d', line);
+          .data([data.karen], () => data.key)
+          .join((enter) =>
+            enter.append('path').attr('class', 'line-karen').attr('d', line)
+          );
 
         $vis
           .selectAll('.line')
-          .data([data.values])
-          .join((enter) => enter.append('path').attr('class', 'line'))
-          .attr('d', line)
+          .data([data.values], () => data.key)
+          .join((enter) =>
+            enter.append('path').attr('class', 'line').attr('d', line)
+          )
           .attr('stroke', 'url(#linear-gradient)');
 
         $axis
@@ -189,6 +196,7 @@ d3.selection.prototype.karenLine = function init(options) {
         if (!arguments.length) return data;
         data = val;
         $chart.datum(data);
+        console.log(data);
         return Chart;
       },
     };

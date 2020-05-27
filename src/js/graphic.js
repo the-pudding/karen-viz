@@ -5,8 +5,8 @@ import './pudding-chart/line';
 const $containers = d3.selectAll('.charts');
 const charts = [];
 const $future = d3.select('.future');
-const $dropdownF = $future.select('#female-select');
-const $dropdownM = $future.select('#male-select');
+const $futureContainers = $future.selectAll('.charts');
+const $dropdowns = $future.selectAll('select');
 
 // data
 let annual = null;
@@ -18,12 +18,16 @@ const cutoff = 0.7;
 function filterData(gender, time) {
   const current = time === 'current';
   // first, find matches for the time frame & time frame
+
+  // figure out what year we're dealing with if we're talking future Karen
+  const futureCol = `corKaren${time}`;
+
   const filteredCorr = corr
     .filter((d) => d.gender === gender)
-    .filter((d) => (current ? d.corKaren > cutoff : d.corKaren10 > cutoff))
+    .filter((d) => (current ? d.corKaren > cutoff : d[futureCol] > cutoff))
     // return names and correlation for this chart
     .map((d) => {
-      const thisCorr = current ? d.corKaren : d.corKaren10;
+      const thisCorr = current ? d.corKaren : d[futureCol];
       return [d.name, thisCorr];
     });
 
@@ -54,15 +58,40 @@ function filterData(gender, time) {
   return nestedNames;
 }
 
-function handleDropdown() {}
+function handleDropdown() {
+  const val = d3.select(this).property('value');
+
+  $futureContainers.each(function (d, i) {
+    const $sel = d3.select(this);
+    const chartGender = $sel.attr('data-gender');
+    const filtered = filterData(chartGender, val)
+      .sort((a, b) => d3.descending(a.corr, b.corr))
+      .slice(0, 10);
+
+    $sel.selectAll('.chart__line').remove();
+
+    const theseCharts = $sel
+      .selectAll('.chart__line')
+      .data(filtered)
+      .join((enter) => enter.append('div').attr('class', 'chart__line'))
+      .karenLine();
+
+    theseCharts.forEach((chart) => chart.resize().render());
+
+    // change both dropdowns to match
+    $dropdowns.selectAll('option').property('selected', (d) => d === +val);
+  });
+}
 
 function setupChart() {
   const $sel = d3.select(this);
   const chartGender = $sel.attr('data-gender');
   const chartTime = $sel.attr('data-time');
 
+  const passYear = chartTime === 'current' ? 'current' : '10';
+
   // filter specific data for this section and sort by decreasing correlation
-  const filtered = filterData(chartGender, chartTime).sort((a, b) =>
+  const filtered = filterData(chartGender, passYear).sort((a, b) =>
     d3.descending(a.corr, b.corr)
   );
 
@@ -77,15 +106,29 @@ function setupChart() {
   const id = `${chartGender}-${chartTime}`;
 
   charts.push([theseCharts]);
-  console.log({ charts });
 }
 
 function resize() {}
 
+function setupDropdowns() {
+  const years = [10, 20, 30];
+
+  $dropdowns
+    .selectAll('option')
+    .data(years)
+    .join((enter) =>
+      enter
+        .append('option')
+        .text((d) => `${d} years`)
+        .attr('value', (d) => d)
+    );
+  $dropdowns.on('change', handleDropdown);
+}
+
 function init(data) {
   [annual, corr, karen] = data;
-  console.log({ karen, data });
   $containers.each(setupChart);
+  setupDropdowns();
 }
 
 export default { init, resize };
