@@ -1,6 +1,6 @@
 .intro
 	margin 0 auto
-	padding 6rem 1rem 3rem 1rem
+	padding 0rem 1rem 3rem 1rem
 
 	&__hed
 		max-width 35rem
@@ -16,3 +16,29 @@
 		text-align center
 		font-family $national
 		set-type-size('root', true)
+
+	&__image
+		position relative
+		height 0
+		margin 0 auto
+		width 100%
+		padding-bottom 55%	
+
+		.layer1, .layer2, .layer3
+			top 0
+			left 0
+			width 100%
+			position absolute
+			transition 0.1s ease-in	
+
+		.layer1
+			&.shifted
+				transform rotate(5deg) scale(1.05)
+
+		.layer2
+			&.shifted
+				transform rotate(-2deg) scale(.95)
+
+		.layer3
+			&.shifted
+				transform rotate(2deg) scale(.95)					

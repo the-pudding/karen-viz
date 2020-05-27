@@ -1,6 +1,7 @@
 /* global d3 */
 import './pudding-chart/line';
 import Annotation from 'd3-svg-annotation';
+import parallax from './parallax';
 
 // selections
 const $containers = d3.selectAll('.charts');
@@ -162,6 +163,7 @@ function handleButtonClick() {
 }
 
 function init(data) {
+  parallax.init();
   [annual, corr, karen] = data;
   $containers.each(setupChart);
   setupDropdowns();
