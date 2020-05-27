@@ -1,46 +1,46 @@
 <section class='future'>
-    <h2>The Other</h2>
+    <h2>The Future</h2>
     <div class='line'></div>
     <div class='brief brief__female'>
-       <h2>Karens</h2>
-       <div class='text'>
-           {{#each copy.futureFKarens}}
+        <h2>Karens</h2>
+        <div class='text'>
+            {{#each copy.futureFKarens}}
             <p>{{{value}}}</p>
-           {{/each}}
-           {{#each copy.futureFDetails}}
-           <div class='row'>
-               <p class='title'>The Karen in <span class='year-change'>10</span> years</p>
-               <p>{{{replaceName}}}</p>
-               <p class='corr'>Correlation: {{{replaceCorr}}}</p>
-           </div>
-           <div class='row'>
-               <p class='title'>The future anti-Karen</p>
-               <p>{{{antiName}}}</p>
-               <p class='corr'>Correlation: {{{antiCorr}}}</p>
-           </div>
-           {{/each}}
-       </div>
+            {{/each}}
+            {{#each copy.futureFDetails}}
+            <div class='row'>
+                <p class='title'>The Karen in <span class='year-change'>10</span> years</p>
+                <p>{{{replaceName}}}</p>
+                <p class='corr'>Correlation: {{{replaceCorr}}}</p>
+            </div>
+            <div class='row'>
+                <p class='title'>The future anti-Karen</p>
+                <p>{{{antiName}}}</p>
+                <p class='corr'>Correlation: {{{antiCorr}}}</p>
+            </div>
+            {{/each}}
+        </div>
     </div>
-    <div class='charts charts__female'></div>
+    <div class='charts charts__female' data-gender='F' data-time='future'></div>
     <div class='brief brief__male'>
-       <div class='text'>
-           {{#each copy.futureMKarens}}
+        <div class='text'>
+            {{#each copy.futureMKarens}}
             <p>{{{value}}}</p>
-           {{/each}}
-           {{#each copy.futureMDetails}}
-           <div class='row'>
-               <p class='title'>The Karen in <span class='year-change'>10</span> years</p>
-               <p>{{{replaceName}}}</p>
-               <p class='corr'>Correlation: {{{replaceCorr}}}</p>
-           </div>
-           <div class='row'>
-               <p class='title'>The future anti-Karen</p>
-               <p>{{{antiName}}}</p>
-               <p class='corr'>Correlation: {{{antiCorr}}}</p>
-           </div>
-           {{/each}}
-       </div>
+            {{/each}}
+            {{#each copy.futureMDetails}}
+            <div class='row'>
+                <p class='title'>The Karen in <span class='year-change'>10</span> years</p>
+                <p>{{{replaceName}}}</p>
+                <p class='corr'>Correlation: {{{replaceCorr}}}</p>
+            </div>
+            <div class='row'>
+                <p class='title'>The future anti-Karen</p>
+                <p>{{{antiName}}}</p>
+                <p class='corr'>Correlation: {{{antiCorr}}}</p>
+            </div>
+            {{/each}}
+        </div>
     </div>
-    <div class='charts charts__male'></div>
+    <div class='charts charts__male' data-gender='M' data-time='future'></div>
     <div class='line'></div>
 </section>

@@ -42,6 +42,7 @@
 
         .table 
             width 45%
+            border-spacing 4rem
 
             h3
                 font-family 'Impact'
@@ -64,25 +65,29 @@
                     align-items baseline 
                     width 33%
                     padding-left 0.25rem
+            td 
+                font-family $mono 
+                text-transform uppercase
+                set-type-size('small', true) 
+                margin 0.75rem 0
+                padding 0.25rem 0.5rem
+                border-bottom 1px solid $gray-light
 
-                    .num
-                        font-family 'Impact'
-                        set-type-size('root', true)
-                        margin 0.75rem 0.5rem 0.75rem 0
-                        letter-spacing 0.025rem
+                .num
+                    font-family 'Impact'
+                    set-type-size('root', true)
+                    margin 0.75rem 0.5rem 0.75rem 0
+                    letter-spacing 0.025rem
 
-                    .name
-                        font-family $mono 
-                        text-transform uppercase
-                        set-type-size('small', true) 
-                        margin 0.75rem 0
+                        
 
-                &__master  
-                    border-bottom 3px solid $karen-red
+            thead
+                border-bottom 3px solid $karen-red
 
-                    .title
-                       font-family 'Impact'
-                       set-type-size('large', true)
-                       margin 0  
-                       text-transform uppercase 
-                       letter-spacing 0.025rem        
+                th
+                    font-family 'Impact'
+                    set-type-size('large', true)
+                    margin 0  
+                    text-transform uppercase 
+                    letter-spacing 0.025rem  
+                    padding 0 0.5rem      

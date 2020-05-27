@@ -1,1 +1,39 @@
 /* CUSTOM STORY STYLE */
+
+.charts 
+    display flex 
+    flex-direction row 
+    flex-wrap wrap
+
+
+.chart__line 
+    width 150px
+    height 200px
+    margin 1rem
+    .chart-name 
+        margin 0
+        font-family 'Impact'
+        set-type-size('x-large')
+        text-transform uppercase
+    .chart-sub 
+        font-family $national
+        text-transform uppercase 
+        set-type-size('small')
+        margin 0
+        span 
+            font-family 'Impact'
+            color $karen-red
+    .g-axis 
+        line
+            stroke $gray-light
+            stroke-width 1px
+        text 
+            color $off-black
+            font-family $mono
+
+    .line 
+        stroke-width 2px 
+        fill none
+        &-karen 
+            stroke $karen-gray
+            fill none
