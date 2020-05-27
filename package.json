@@ -8,6 +8,7 @@
     "node": "10.18.0"
   },
   "dependencies": {
+    "d3-svg-annotation": "^2.5.1",
     "lodash.debounce": "4.0.8",
     "nouislider": "14.2.0",
     "superagent": "5.2.2"

@@ -1,4 +1,5 @@
 /* global d3 */
+import Annotation from 'd3-svg-annotation';
 
 /*
  USAGE (example: line chart)
@@ -49,6 +50,39 @@ d3.selection.prototype.karenLine = function init(options) {
     const BOTTOM_COLOR = '#F93A5B';
 
     // helper functions
+
+    function addAnnotation(year, proportion, name, dataName) {
+      const type = Annotation.annotationCustomType(Annotation.annotationLabel, {
+        connector: { end: 'dot' },
+        note: { align: 'middle' },
+      });
+
+      const extraHigh = name === 'Karen' && dataName === 'David';
+
+      const annotations = [
+        {
+          note: {
+            title: name,
+          },
+          className: `annotation annotation--${name}`,
+          x: scaleX(year),
+          y: scaleY(proportion),
+          dy: extraHigh ? -80 : -30,
+          dx: 0,
+        },
+      ];
+
+      const makeAnnotations = Annotation.annotation()
+        .editMode(false)
+        .notePadding(0)
+        .type(type)
+        .annotations(annotations);
+
+      $vis
+        .append('g')
+        .attr('class', `annotation-group__${name}`)
+        .call(makeAnnotations);
+    }
 
     function setupGradient() {
       const defs = $svg.append('defs');
@@ -126,7 +160,7 @@ d3.selection.prototype.karenLine = function init(options) {
         return Chart;
       },
       // update scales and render chart
-      render() {
+      render(i) {
         updateChartDetails();
         // offset chart for margins
         $vis.attr('transform', `translate(${MARGIN_LEFT}, ${MARGIN_TOP})`);
@@ -157,10 +191,7 @@ d3.selection.prototype.karenLine = function init(options) {
               .tickValues([1918, 2018])
               .tickFormat(yearFormat)
           )
-          .attr(
-            'transform',
-            `translate(${MARGIN_LEFT}, ${height})`
-          )
+          .attr('transform', `translate(${MARGIN_LEFT}, ${height})`)
           // remove the X axis line
           .call((g) => g.select('.domain').remove())
           // move text slightly
@@ -188,6 +219,21 @@ d3.selection.prototype.karenLine = function init(options) {
           // remove the y axis line
           .call((g) => g.select('.domain').remove())
           .call((g) => g.selectAll('.tick text').attr('x', -8));
+
+        // add annotations to first chart of section
+        if (i === 0) {
+          const year = 2000;
+          const { prop } = data.values.filter((d) => d.year === year)[0];
+
+          // add annotation for this name
+          addAnnotation(year, prop, data.key, data.key);
+
+          // add annotation for Karen
+          const karenYear = 1945;
+          const karenProp = data.karen.filter((d) => d.year === karenYear)[0]
+            .prop;
+          addAnnotation(karenYear, karenProp, 'Karen', data.key);
+        }
 
         return Chart;
       },

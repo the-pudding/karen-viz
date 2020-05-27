@@ -1,5 +1,6 @@
 /* global d3 */
 import './pudding-chart/line';
+import Annotation from 'd3-svg-annotation';
 
 // selections
 const $containers = d3.selectAll('.charts');
@@ -60,9 +61,9 @@ function filterData(gender, time) {
 
 function handleDropdown() {
   const val = d3.select(this).property('value');
-  console.log(val)
+  console.log(val);
 
-  $futureContainers.each(function (d, i) {
+  $futureContainers.each(function (d) {
     const $sel = d3.select(this);
     const chartGender = $sel.attr('data-gender');
     const filtered = filterData(chartGender, val)
@@ -77,13 +78,13 @@ function handleDropdown() {
       .join((enter) => enter.append('div').attr('class', 'chart__line'))
       .karenLine();
 
-    theseCharts.forEach((chart) => chart.resize().render());
+    theseCharts.forEach((chart, i) => chart.resize().render(i));
 
     // change both dropdowns to match
     $dropdowns.selectAll('option').property('selected', (d) => d === +val);
 
     // change spans in table to match
-    d3.selectAll('.year-change').text(val)
+    d3.selectAll('.year-change').text(val);
   });
 }
 
@@ -105,7 +106,7 @@ function setupChart() {
     .join((enter) => enter.append('div').attr('class', 'chart__line'))
     .karenLine();
 
-  theseCharts.forEach((chart) => chart.resize().render());
+  theseCharts.forEach((chart, i) => chart.resize().render(i));
 
   const id = `${chartGender}-${chartTime}`;
 
