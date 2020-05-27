@@ -242,7 +242,6 @@ d3.selection.prototype.karenLine = function init(options) {
         if (!arguments.length) return data;
         data = val;
         $chart.datum(data);
-        console.log(data);
         return Chart;
       },
     };

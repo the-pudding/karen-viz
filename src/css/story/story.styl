@@ -6,7 +6,15 @@
     flex-wrap wrap
     width 100%
     padding 3rem 0rem   
-
+    height auto 
+    &.is-clipped 
+        /* two rows */
+        height 42rem
+        overflow hidden
+   .show-more 
+        display none 
+        &.is-visible 
+            display block
 
 .chart__line 
     max-width 15rem
@@ -44,6 +52,8 @@
             stroke rgba($gray, 0.75)
             fill none
             stroke-width 2px 
+
+ 
 
     .annotations
         font-family $mono
