@@ -6,7 +6,20 @@
     flex-wrap wrap
     width 100%
     padding 3rem 0rem   
-
+    height auto 
+    &.is-clipped 
+        /* two rows */
+        height 42rem
+        overflow hidden
+   .show-more 
+        display none 
+        margin 1rem auto 2rem auto
+        background-color $bg 
+        color $gray
+        font-family $mono
+        text-transform uppercase
+        &.is-visible 
+            display block
 
 .chart__line 
     max-width 15rem
@@ -44,3 +57,25 @@
             stroke rgba($gray, 0.75)
             fill none
             stroke-width 2px 
+
+ 
+
+    .annotations
+        font-family $mono
+        set-type-size('small')
+        .annotation-note-title
+            fill $karen-red
+        .connector 
+            stroke $karen-red
+        .connector-end 
+            fill $karen-red
+            stroke $karen-red
+
+        .annotation--Karen
+            .annotation-note-title 
+                fill rgba($gray, 0.75)
+            .connector 
+                stroke rgba($gray, 0.75)
+            .connector-end 
+                fill rgba($gray, 0.75)
+                stroke rgba($gray, 0.75)

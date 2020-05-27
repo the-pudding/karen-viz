@@ -21,7 +21,15 @@
             {{/each}}
         </div>
     </div>
-    <div class='charts charts__female' data-gender='F' data-time='future'></div>
+    <div class='chart-wrapper'>
+        <div class='charts charts__female' data-gender='F' data-time='future'></div>
+        <div class='btn-wrapper' data-gender='F' data-time='future'>
+            <button class='show-more'>
+                Show all
+            </button>
+        </div>
+    </div>
+
     <div class='brief brief__male'>
         <div class='text'>
             {{#each copy.futureMKarens}}
@@ -41,6 +49,14 @@
             {{/each}}
         </div>
     </div>
-    <div class='charts charts__male' data-gender='M' data-time='future'></div>
+    <div class='chart-wrapper'>
+        <div class='charts charts__male' data-gender='M' data-time='future'></div>
+        <div class='btn-wrapper' data-gender='M' data-time='future'>
+            <button class='show-more'>
+                Show all
+            </button>
+        </div>
+    </div>
+
     <div class='line'></div>
 </section>

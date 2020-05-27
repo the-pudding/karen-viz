@@ -1,5 +1,6 @@
 /* global d3 */
 import './pudding-chart/line';
+import Annotation from 'd3-svg-annotation';
 import parallax from './parallax';
 
 // selections
@@ -8,6 +9,7 @@ const charts = [];
 const $future = d3.select('.future');
 const $futureContainers = $future.selectAll('.charts');
 const $dropdowns = $future.selectAll('select');
+const $buttons = d3.selectAll('.show-more');
 
 // data
 let annual = null;
@@ -61,14 +63,24 @@ function filterData(gender, time) {
 
 function handleDropdown() {
   const val = d3.select(this).property('value');
-  console.log(val)
 
-  $futureContainers.each(function (d, i) {
+  $futureContainers.each(function (d) {
     const $sel = d3.select(this);
     const chartGender = $sel.attr('data-gender');
-    const filtered = filterData(chartGender, val)
-      .sort((a, b) => d3.descending(a.corr, b.corr))
-      .slice(0, 10);
+    const filtered = filterData(chartGender, val).sort((a, b) =>
+      d3.descending(a.corr, b.corr)
+    );
+
+    // if there are more than 2 rows, clip container and show button
+    const windowWidth = $future.node().offsetWidth;
+    const graphicWidth = 255;
+    const graphicPerRow = windowWidth / graphicWidth;
+    const tooMany = filtered.length > graphicPerRow * 2;
+
+    const btn = d3.select(this.parentNode).select('button');
+
+    $sel.classed('is-clipped', tooMany);
+    btn.classed('is-visible', tooMany);
 
     $sel.selectAll('.chart__line').remove();
 
@@ -78,13 +90,13 @@ function handleDropdown() {
       .join((enter) => enter.append('div').attr('class', 'chart__line'))
       .karenLine();
 
-    theseCharts.forEach((chart) => chart.resize().render());
+    theseCharts.forEach((chart, i) => chart.resize().render(i));
 
     // change both dropdowns to match
     $dropdowns.selectAll('option').property('selected', (d) => d === +val);
 
     // change spans in table to match
-    d3.selectAll('.year-change').text(val)
+    d3.selectAll('.year-change').text(val);
   });
 }
 
@@ -106,7 +118,7 @@ function setupChart() {
     .join((enter) => enter.append('div').attr('class', 'chart__line'))
     .karenLine();
 
-  theseCharts.forEach((chart) => chart.resize().render());
+  theseCharts.forEach((chart, i) => chart.resize().render(i));
 
   const id = `${chartGender}-${chartTime}`;
 
@@ -130,11 +142,32 @@ function setupDropdowns() {
   $dropdowns.on('change', handleDropdown);
 }
 
+function handleButtonClick() {
+  const btn = d3.select(this);
+  const chart = d3.select(this.parentNode.parentNode).select('.charts');
+
+  // was the container clipped before clicking?
+  const expanded = chart.classed('is-clipped');
+  const text = expanded ? 'Show Fewer' : 'Show All';
+  btn.text(text);
+  chart.classed('is-clipped', !expanded);
+
+  console.log(expanded);
+
+  // if (expanded) {
+  //   const y = +btn.attr('data-y');
+  //   window.scrollTo(0, y);
+  // }
+
+  // btn.attr('data-y', window.scrollY);
+}
+
 function init(data) {
+  parallax.init();
   [annual, corr, karen] = data;
   $containers.each(setupChart);
   setupDropdowns();
-  parallax.init();
+  $buttons.on('click', handleButtonClick);
 }
 
 export default { init, resize };
