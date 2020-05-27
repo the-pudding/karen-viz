@@ -3,6 +3,7 @@ import debounce from 'lodash.debounce';
 import isMobile from './utils/is-mobile';
 import linkFix from './utils/link-fix';
 import graphic from './graphic';
+import table from './table';
 import footer from './footer';
 import loadData from './load-data';
 
@@ -82,6 +83,7 @@ function init() {
 
   loadNameData().then((response) => {
     graphic.init(response);
+    table.init(response[1]);
   });
 
   // load footer stories
