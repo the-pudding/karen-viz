@@ -76,6 +76,8 @@
                     align-items baseline 
                     width 33%
                     padding-left 0.25rem
+
+
             td 
                 font-family $mono 
                 text-transform uppercase
@@ -90,7 +92,12 @@
                     margin 0.75rem 0.5rem 0.75rem 0
                     letter-spacing 0.025rem
 
-                        
+            .row--10, .nameMatch
+                background-color rgba($gray-light, 0.5)    
+                
+                &.danger
+                    .num
+                        color $karen-red        
 
             thead
                 border-bottom 3px solid $karen-red
@@ -107,6 +114,9 @@
 
     .autocomplete__wrapper
         position relative
+
+    label 
+        display none
 
     .autocomplete__hint,
     .autocomplete__input
