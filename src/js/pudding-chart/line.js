@@ -58,6 +58,7 @@ d3.selection.prototype.karenLine = function init(options) {
       });
 
       const extraHigh = name === 'Karen' && dataName === 'David';
+      const toTheLeft = name === 'Danielle';
 
       const annotations = [
         {
@@ -222,7 +223,8 @@ d3.selection.prototype.karenLine = function init(options) {
 
         // add annotations to first chart of section
         if (i === 0) {
-          const year = 2000;
+          const year =
+            data.key === 'Danielle' || data.key === 'Matthew' ? 1997 : 2000;
           const { prop } = data.values.filter((d) => d.year === year)[0];
 
           // add annotation for this name
