@@ -1,4 +1,9 @@
 /* CUSTOM STORY STYLE */
+ 
+.prose a
+    &:hover
+        color $karen-purple
+        border-bottom 1px solid $karen-purple
 
 .charts 
     display flex 
@@ -7,10 +12,15 @@
     width 100%
     padding 3rem 0rem   
     height auto 
+    justify-content center
     &.is-clipped 
-        /* two rows */
-        height 42rem
+        /* five rows */
+        height 100rem
         overflow hidden
+        +mq('bp-4')
+          height 42rem  
+    +mq('bp-5')
+        justify-content flex-start  
     
 .btn-wrapper
     width 10rem
@@ -37,7 +47,9 @@
 .chart__line 
     max-width 15rem
     height 18rem
-    margin 1.5rem
+    margin 1rem
+    +mq('bp-5')
+        margin 1.5rem
 
     .chart-name 
         margin 0

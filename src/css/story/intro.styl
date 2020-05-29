@@ -1,14 +1,20 @@
 .intro
 	margin 0 auto
-	padding 0rem 1rem 3rem 1rem
+	padding 0rem 0rem 3rem 0rem
 
 	&__hed
-		max-width 35rem
-		margin 0 auto 5rem auto
+		max-width 25rem
+		margin 0 auto 3rem auto
 		text-align center
 		font-family 'Impact'
 		text-transform uppercase
-		set-type-size('big-daddy', true)
+		set-type-size('x6-large', true)
+		+mq('bp-3')
+			max-width 35rem
+			set-type-size('lil-daddy', true)
+		+mq('bp-5')
+			set-type-size('big-daddy', true)
+			margin 0 auto 5rem auto
 		
 	&__byline
 		max-width $column-width
@@ -16,16 +22,21 @@
 		text-align center
 		font-family $national
 		set-type-size('root', true)
+		padding 0 1rem
+
+		a
+			&:hover
+				color $karen-purple
+				border-bottom 1px solid $karen-purple
 
 	&__image
 		position relative
 		height 0
-		margin 0 auto 3rem 0
+		margin 3rem auto
 		width 100%
-		padding-bottom 55%	
-
-		.layer1, .layer2, .layer3
-			border 7px solid $off-black
+		padding-bottom 55%
+		+mq('bp-5')
+			margin 0 auto 3rem auto	
 
 		.layer1
 			position absolute
@@ -35,15 +46,34 @@
 			transform translate(-50%, -50%)
 			max-width 32%
 
+			img
+
+				&:hover
+					transform rotate(5deg) scale(1.05)
+					transform origin center	
+
 		.layer2
 			position absolute
 			top 12%
 			left 60%
 			max-width 35%
 
+			img
+
+				&:hover
+					transform rotate(-2deg) scale(.95)
+					transform origin center	
+
 		.layer3
 			position absolute
 			top 15%
 			left 5%
 			max-width 35%
+			
+			img
+
+				&:hover
+						transform rotate(2deg) scale(.95)
+						transform origin center	
+
 							

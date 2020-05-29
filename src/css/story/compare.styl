@@ -4,16 +4,21 @@
 
     .search-container
         max-width $column-width
-        margin 0 auto 7rem auto
+        margin 0 auto 5rem auto
         padding 1rem
         font-family $national
+        +mq('bp-4')
+            margin 0 auto 7rem auto
 
         .directions
             display flex
-            flex-direction row
+            flex-direction column
             align-items baseline
             width 100%
-            justify-content space-between
+            justify-content flex-start
+            +mq('bp-4')
+              justify-content space-between 
+              flex-direction row 
 
             .title
                 font-family 'Impact'
@@ -30,7 +35,10 @@
         input
             width 100%
             border 2px solid $off-black  
-            height 3rem  
+            height 3rem 
+            margin 0.5rem 0 0 0
+            +mq('bp-4')
+                margin 0 
 
 
     .table-container
@@ -38,31 +46,47 @@
         max-width 65rem
         margin 0 auto   
         display flex
-        flex-direction row
+        flex-direction column
         justify-content space-between
+        padding 0 1rem
+        +mq('bp-5')
+            flex-direction row
+
 
         .table 
-            width 48%
+            width 100%
             border-spacing 4rem
             display flex
             justify-content flex-end
             position relative
+            margin 0 0 3rem 0
+            +mq('bp-5')
+                width 48%
+                margin 0
 
             h3
                 font-family 'Impact'
-                set-type-size('xxx-large', true)
+                set-type-size('xx-large', true)
                 text-transform uppercase  
-                transform rotate(-90deg)
+                transform rotate(0deg)
                 transform-origin 0 0  
-                margin 15rem 0 0 0
                 position absolute
                 top 0
                 left 0
-                text-align right
+                text-align left
                 width 15rem
+                +mq('bp-4')
+                    set-type-size('xxx-large', true) 
+                    transform rotate(-90deg)
+                    margin 15rem 0 0 0
+                    text-align right
 
             table
-                width calc(100% - 3.5rem)   
+                width 100%
+                margin 4.5rem 0 0 0
+                +mq('bp-4') 
+                    width calc(100% - 3.5rem) 
+                    margin 0
 
             .row
                 width 100%
@@ -81,16 +105,20 @@
             td 
                 font-family $mono 
                 text-transform uppercase
-                set-type-size('small', true) 
+                set-type-size('x-small', true) 
                 margin 0.75rem 0
                 padding 0.5rem 0.5rem
                 border-bottom 1px solid $gray-light
+                +mq('bp-4')
+                    set-type-size('small', true) 
 
                 .num
                     font-family 'Impact'
-                    set-type-size('small', true)
+                    set-type-size('x-small', true)
                     margin 0.75rem 0.5rem 0.75rem 0
                     letter-spacing 0.025rem
+                    +mq('bp-4')
+                        set-type-size('small', true) 
 
             .row--10, .nameMatch
                 background-color rgba($gray-light, 0.5)    
