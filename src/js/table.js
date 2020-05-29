@@ -54,11 +54,11 @@ function setupData(gender) {
   return zipped;
 }
 
-function setupTableBody(userInput) {
-  const getRowData = (d, i) => {
-    return COLUMNS.map((c) => ({ value: d[c.prop], title: c.title }));
-  };
+const getRowData = (d, i) => {
+  return COLUMNS.map((c) => ({ value: d[c.prop], title: c.title }));
+};
 
+function setupTableBody(userInput) {
   $tables.each(function (d) {
     const table = d3.select(this);
     const chartGender = table.attr('data-gender');
@@ -66,21 +66,46 @@ function setupTableBody(userInput) {
     let tableData = null;
 
     if (userInput.length > 0) {
-      const userCorr = data.filter((d) => d.name === userInput);
-      console.log(userCorr);
+      const userCorr = data.filter(
+        (d) => d.name === userInput && d.gender === chartGender
+      );
+
+      const userSpans = userCorr.map((d) => {
+        return [
+          `<span class='num'>${d.corKaren10}</span> ${d.name}`,
+          `<span class='num'>${d.corKaren20}</span> ${d.name}`,
+          `<span class='num'>${d.corKaren30}</span> ${d.name}`,
+        ];
+      });
+      tableData = setupData(chartGender).concat(userSpans);
+
+      console.log({ userCorr, tableData, userSpans });
     } else tableData = setupData(chartGender);
 
     const row = table
       .select('tbody')
       .selectAll('tr')
       .data(tableData)
-      .join((enter) => enter.append('tr'));
+      .join((enter) => enter.append('tr').attr('class', (e, i) => `row--${i}`));
 
     row
       .selectAll('td')
       .data(getRowData, (e) => `${e.value}-${e.title}`)
-      .join((enter) => enter.append('td').attr('class', (e) => `${e.title}`))
-      .html((e) => e.value);
+      .join((enter) => enter.append('td'))
+      .html((e) => e.value)
+      .attr('class', (e) => {
+        const split = e.value.split(' ');
+        const findName = split.pop();
+        let match = null;
+        if (findName === userInput) match = 'nameMatch';
+        else match = 'noMatch';
+        const num = split.slice(1, 2)[0].substring(12, 15);
+        const dangerKaren = num >= 0.7;
+        console.log({ dangerKaren, num });
+        return dangerKaren
+          ? `${findName} ${match} danger`
+          : `${findName} ${match}`;
+      });
   });
 }
 
@@ -94,10 +119,10 @@ function setupTypeFunctionality() {
     id: 'my-autocomplete',
     source: onlyNames,
     displayMenu: 'overlay',
-    confirmOnBlur: true,
+    confirmOnBlur: false,
     onConfirm(name) {
       console.log({ name });
-      // setupTableBody(name);
+      setupTableBody(name);
     },
   });
 }
