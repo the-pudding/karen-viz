@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang='en' data-version='1590771704238'>
+
+<head>
+
+	<title>This Is Karen.</title>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+	<meta name='description' content='Sentence case dek goes down here. Modify these in data/meta.json.' />
+	<meta name='news_keywords' content='tk' />
+	
+	<meta property='og:title' content='This Is Karen.' />
+	<meta property='og:site_name' content='The Pudding' />
+	<meta property='og:url' content='https://pudding.cool/year/month/name/' />
+	<meta property='og:description' content='Sentence case dek goes down here. Modify these in data/meta.json.' />
+	<meta property='og:type' content='article' />
+	<meta property='og:locale' content='en_US' />
+	
+	<meta property='og:image' content='https://pudding.cool/year/month/name/assets/social/social-facebook.jpg' />
+	<meta property='og:image:type' content='image/jpeg' />
+	<meta property='og:image:width' content='1200' />
+	<meta property='og:image:height' content='600' />
+	
+	<meta name='twitter:card' content='summary_large_image' />
+	<meta name='twitter:site' content='https://pudding.cool' />
+	<meta name='twitter:creator' content='' />
+	<meta name='twitter:title' content='This Is Karen.' />
+	<meta name='twitter:description' content='Sentence case dek goes down here. Modify these in data/meta.json.' />
+	<meta name='twitter:image:src' content='https://pudding.cool/year/month/name/assets/social/social-twitter.jpg' />
+	
+	<link rel='canonical' href='https://pudding.cool/year/month/name/' />
+	
+	<link rel='apple-touch-icon' sizes='180x180' href='https://pudding.cool/apple-touch-icon.png'>
+	<link rel='icon' type='image/png' sizes='32x32' href='https://pudding.cool/favicon-32x32.png'>
+	<link rel='icon' type='image/png' sizes='16x16' href='https://pudding.cool/favicon-16x16.png'>
+	<link rel='manifest' href='https://pudding.cool/site.webmanifest'>
+	<link rel='mask-icon' href='https://pudding.cool/safari-pinned-tab.svg' color='#5bbad5'>
+	<meta name='msapplication-TileColor' content='#ffc40d'>
+	<meta name='theme-color' content='#ffffff'>
+	<link rel='preload' type='font/woff2' as='font' crossorigin
+		href='https://pudding.cool/assets/fonts/national/National2Web-Regular.woff2'>
+	<link rel='preload' type='font/woff2' as='font' crossorigin
+		href='https://pudding.cool/assets/fonts/national/National2Web-Bold.woff2'>
+	<link rel='preload' type='font/woff2' as='font' crossorigin
+		href='https://pudding.cool/assets/fonts/national/National2NarrowWeb-Regular.woff2'>
+	<link rel='preload' type='font/woff2' as='font' crossorigin
+		href='https://pudding.cool/assets/fonts/national/National2NarrowWeb-Bold.woff2'>
+	<link rel='preload' type='font/woff2' as='font' crossorigin
+		href='https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Regular.woff2'>
+	<link rel='preload' type='font/woff2' as='font' crossorigin
+		href='https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Bold.woff2'>
+
+	<style>*{-webkit-box-sizing:border-box;box-sizing:border-box}html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}a img{border:none}blockquote{quotes:none}blockquote:before,blockquote:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}.xxx-small{font-size:10px;line-height:1.65}.xx-small{font-size:11px;line-height:1.65}.x-small{font-size:12px;line-height:1.65}.small{font-size:14px;line-height:1.65}.root{font-size:16px;line-height:1.65}.medium{font-size:18px;line-height:1.65}.large{font-size:20px;line-height:1.5}.x-large{font-size:24px;line-height:1.4}.xx-large{font-size:32px;line-height:1.4}.xxx-large{font-size:40px;line-height:1.4}.xxxx-large{font-size:48px;line-height:1.2}.xxxxx-large{font-size:64px;line-height:1.2}.lil-daddy{font-size:150px;line-height:.9}.big-daddy{font-size:200px;line-height:.9}.hide-accessible{width:1px;height:1px;overflow:hidden;position:absolute}.hide-invisible{visibility:hidden}.hide-display{display:none}.skip-to-main{border:none;width:1px;height:1px;overflow:hidden;position:absolute}.skip-to-main:focus{width:auto;height:auto;background-color:#f4f4f4;padding:.5rem;z-index:1000}.prose{max-width:40rem;margin:0 auto;padding:0 1rem;margin-bottom:1.5rem;font-family:'National 2 Web'}.media-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkRDMDBGQ0Y5NEI4NjExRTM5RTg2QTY1RTUyQjIxNEQyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkRDMDBGQ0ZBNEI4NjExRTM5RTg2QTY1RTUyQjIxNEQyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6REMwMEZDRjc0Qjg2MTFFMzlFODZBNjVFNTJCMjE0RDIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6REMwMEZDRjg0Qjg2MTFFMzlFODZBNjVFNTJCMjE0RDIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6C0EmkAAAAGElEQVR42mJiYGD4DwQMTECCEchhAAgwAEcGBv9dngKPAAAAAElFTkSuQmCC")}#starter-guide{max-width:40rem;margin:0 auto}body{-webkit-font-feature-settings:'kern' 1,'onum' 0,'liga' 0,'tnum' 1;font-feature-settings:'kern' 1,'onum' 0,'liga' 0,'tnum' 1;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:rgba(0,0,0,0);background-color:#fff;color:#282828;font-weight:500;font-family:'Tiempos Text Web',Georgia,Times,serif;font-size:16px}@media only screen and (min-width:30em){body{font-size:18px}}h1{font-size:32px;line-height:1.4;margin-top:1.5rem}h2{font-size:24px;line-height:1.4;margin-top:1.5rem}h3{font-size:20px;line-height:1.5;margin-top:1.5rem}h4{font-size:18px;line-height:1.65;margin-top:1.5rem}h5{font-size:16px;line-height:1.65;margin-top:1.5rem}h6{font-size:14px;line-height:1.65;margin-top:1.5rem}p{margin:1.5rem 0;font-size:16px;line-height:1.65}@media only screen and (min-width:30em){p{font-size:18px;line-height:1.65}}a{text-decoration:none;border-bottom:1px solid #282828;color:#282828}a:visited,a:hover{color:#282828}strong,b{font-weight:700}em,i{font-style:italic}ul{list-style-type:none}li{font-size:16px}@media only screen and (min-width:30em){li{font-size:18px}}img,video{display:block;width:100%}button{cursor:pointer;border:none;outline:none;margin:0;padding:0;font-size:16px}@media only screen and (min-width:30em){button{font-size:18px}}sub,sup{font-size:.75rem;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}.compare{width:100%;margin-bottom:5rem}.compare .search-container{max-width:40rem;margin:0 auto 7rem auto;padding:1rem;font-family:'National 2 Web'}.compare .search-container .directions{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:baseline;-ms-flex-align:baseline;align-items:baseline;width:100%;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.compare .search-container .directions .title{font-family:'Impact';text-transform:uppercase;font-size:24px;line-height:1.4;letter-spacing:.025rem}.compare .search-container .directions p{font-family:Menlo,Consolas,Monaco,'Courier New',monospace;font-size:12px;line-height:1.65;text-transform:uppercase;margin:0}.compare .search-container input{width:100%;border:2px solid #282828;height:3rem}.compare .table-container{width:100%;max-width:65rem;margin:0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.compare .table-container .table{width:48%;border-spacing:4rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;position:relative}.compare .table-container .table h3{font-family:'Impact';font-size:40px;line-height:1.4;text-transform:uppercase;-webkit-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg);-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;margin:15rem 0 0 0;position:absolute;top:0;left:0;text-align:right;width:15rem}.compare .table-container .table table{width:calc(100% - 3.5rem)}.compare .table-container .table .row{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;border-bottom:1px solid #e5e5e5}.compare .table-container .table .row .col10,.compare .table-container .table .row .col20,.compare .table-container .table .row .col30{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:baseline;-ms-flex-align:baseline;align-items:baseline;width:33%;padding-left:.25rem}.compare .table-container .table td{font-family:Menlo,Consolas,Monaco,'Courier New',monospace;text-transform:uppercase;font-size:14px;line-height:1.65;margin:.75rem 0;padding:.5rem .5rem;border-bottom:1px solid #e5e5e5}.compare .table-container .table td .num{font-family:'Impact';font-size:14px;line-height:1.65;margin:.75rem .5rem .75rem 0;letter-spacing:.025rem}.compare .table-container .table .row--10,.compare .table-container .table .nameMatch{background-color:rgba(229,229,229,0.5)}.compare .table-container .table .row--10.danger .num,.compare .table-container .table .nameMatch.danger .num{color:#f93a5b}.compare .table-container .table thead{border-bottom:3px solid #f93a5b}.compare .table-container .table thead th{font-family:'Impact';font-size:20px;line-height:1.5;margin:0;text-transform:uppercase;letter-spacing:.025rem;padding:0 .5rem}.compare .autocomplete__wrapper{position:relative}.compare label{display:none}.compare .autocomplete__hint,.compare .autocomplete__input{-webkit-appearance:none;border:2px solid #0b0c0c;border-radius:0;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;margin-bottom:0;width:100%}.compare .autocomplete__input{background-color:transparent;position:relative}.compare .autocomplete__hint{color:#b1b4b6;position:absolute}.compare .autocomplete__input--default{padding:5px}.compare .autocomplete__input--focused{outline:3px solid #f93a5b;outline-offset:0;-webkit-box-shadow:inset 0 0 0 2px;box-shadow:inset 0 0 0 2px}.compare .autocomplete__input--show-all-values{padding:5px 34px 5px 5px;cursor:pointer}.compare .autocomplete__dropdown-arrow-down{z-index:-1;display:inline-block;position:absolute;right:8px;width:24px;height:24px;top:10px}.compare .autocomplete__menu{background-color:#fff;border:2px solid #0b0c0c;border-top:0;color:#0b0c0c;margin:0;max-height:342px;overflow-x:hidden;padding:0;width:100%;width:calc(100% - 4px)}.compare .autocomplete__menu--visible{display:block}.compare .autocomplete__menu--hidden{display:none}.compare .autocomplete__menu--overlay{-webkit-box-shadow:rgba(0,0,0,0.257) 0 2px 6px;box-shadow:rgba(0,0,0,0.257) 0 2px 6px;left:0;position:absolute;top:100%;z-index:100}.compare .autocomplete__menu--inline{position:relative}.compare .autocomplete__option{border-bottom:solid #b1b4b6;border-width:1px 0;cursor:pointer;display:block;position:relative}.compare .autocomplete__option > *{pointer-events:none}.compare .autocomplete__option:first-of-type{border-top-width:0}.compare .autocomplete__option:last-of-type{border-bottom-width:0}.compare .autocomplete__option--odd{background-color:#fafafa}.compare .autocomplete__option--focused,.compare .autocomplete__option:hover{background-color:#1d70b8;border-color:#1d70b8;color:#fff;outline:0}.compare .autocomplete__option--no-results{background-color:#fafafa;color:#646b6f;cursor:not-allowed}.compare .autocomplete__hint,.compare .autocomplete__input,.compare .autocomplete__option{font-size:16px;line-height:1.25}.compare .autocomplete__hint,.compare .autocomplete__option{padding:5px}footer.pudding-footer{padding:3rem 1rem;border-top:4px solid #000;font-family:'National 2 Web',Helvetica,Arial,sans-serif;margin-top:3rem}footer.pudding-footer .footer-recirc{max-width:65rem;margin:0 auto}footer.pudding-footer .footer-recirc__articles{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}footer.pudding-footer .footer-recirc__article{display:block;width:100%;border:none;margin-bottom:2rem}@media only screen and (min-width:50em){footer.pudding-footer .footer-recirc__article{width:calc(25% - 1.5rem);margin-right:1.5rem}footer.pudding-footer .footer-recirc__article:last-of-type{margin-right:0}}footer.pudding-footer .footer-recirc .article__headline{font-family:'National 2 Narrow Web',Helvetica,Arial,sans-serif;font-size:20px;line-height:1;font-weight:700;padding-left:.5rem}footer.pudding-footer .footer-company{margin:0 auto;margin-top:3rem;max-width:65rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;font-family:'National 2 Narrow Web',Helvetica,Arial,sans-serif}@media only screen and (min-width:50em){footer.pudding-footer .footer-company{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}}footer.pudding-footer .footer-company__cta{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1;margin:2rem 0 0 0;width:100%}@media only screen and (min-width:50em){footer.pudding-footer .footer-company__cta{width:22rem;margin:0 0 0 2rem}}footer.pudding-footer .footer-company__cta-list{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;height:12rem}@media only screen and (min-width:50em){footer.pudding-footer .footer-company__cta-list{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}}footer.pudding-footer .footer-company__cta-list li{display:-webkit-box;display:-ms-flexbox;display:flex;width:50%;margin-bottom:1rem;-webkit-box-align:center;-ms-flex-align:center;align-items:center}@media only screen and (min-width:50em){footer.pudding-footer .footer-company__cta-list li{padding-left:1rem}}footer.pudding-footer .footer-company__cta-list li a{display:-webkit-box;display:-ms-flexbox;display:flex;border:none}footer.pudding-footer .footer-company__cta-list li p{font-family:'National 2 Narrow Web',Helvetica,Arial,sans-serif;margin:0;padding-left:.5rem;padding-top:.1rem;line-height:1;color:#949494}@media only screen and (min-width:40em){footer.pudding-footer .footer-company__cta-list li p{font-size:20px}}footer.pudding-footer .footer-company__cta-list li svg{fill:#949494;stroke:none;vertical-align:middle}footer.pudding-footer .footer-company__cta-list li svg circle,footer.pudding-footer .footer-company__cta-list li svg polyline,footer.pudding-footer .footer-company__cta-list li svg line{fill:none;stroke:#949494}footer.pudding-footer .footer-company__cta-list li .feather-mail path,footer.pudding-footer .footer-company__cta-list li .feather-lock path,footer.pudding-footer .footer-company__cta-list li .feather-rss path{stroke:#949494;fill:none}footer.pudding-footer .footer-company__about{-webkit-box-ordinal-group:1;-ms-flex-order:0;order:0;width:100%;color:#949494;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}@media only screen and (min-width:50em){footer.pudding-footer .footer-company__about{width:calc(100% - 24rem)}}footer.pudding-footer .footer-company__about p{margin:0;font-size:16px;line-height:1.4}footer.pudding-footer .footer-company__about svg{width:12rem;margin-bottom:.5rem}header{z-index:1000;position:absolute;top:0;left:0;width:100%;background-color:#fff;font-family:'National 2 Web',Helvetica,Arial,sans-serif}header a.logo{display:block;border:none;max-width:9rem;margin:1rem auto}header a.logo svg{fill:#282828;display:block;width:100%}header.is-sticky{position:fixed;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);background-color:#fff;-webkit-box-shadow:0 0 7px 1px #e5e5e5;box-shadow:0 0 7px 1px #e5e5e5;height:3rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}header.is-sticky a.logo{margin:0 auto}header.is-sticky .header__toggle{position:fixed;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);top:0;right:0;padding:.75rem;cursor:pointer;line-height:1;z-index:1000;border:none;background-color:transparent}header.is-sticky .header__toggle svg{stroke:#282828}header.is-sticky .header__toggle span:first-of-type{display:block}header.is-sticky .header__toggle span:last-of-type{display:none}header.is-sticky .header__toggle.is-visible span:first-of-type{display:none}header.is-sticky .header__toggle.is-visible span:last-of-type{display:block}header.is-sticky .header__toggle.is-visible span svg{stroke:#f4f4f4}header.is-sticky .header__menu{position:fixed;top:0;right:0;-webkit-transform:translateX(100%);-ms-transform:translateX(100%);transform:translateX(100%);height:100vh;width:100%;max-width:30rem;padding:1rem 1.5rem;background-color:#282828;color:#f4f4f4;z-index:1000;-webkit-transition:-webkit-transform 200ms ease-in-out;transition:-webkit-transform 200ms ease-in-out;-o-transition:transform 200ms ease-in-out;transition:transform 200ms ease-in-out;transition:transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out}@media only screen and (min-width:30em){header.is-sticky .header__menu{border-left:1px solid #5b5b5b}}header.is-sticky .header__menu.is-visible{-webkit-transform:translateX(0);-ms-transform:translateX(0);transform:translateX(0)}header.is-sticky .header__menu a{color:#f4f4f4;border-bottom:1px solid #f4f4f4}header.is-sticky .header__menu a:hover{color:#e5e5e5}header.is-sticky .header__menu .menu__links{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}@media only screen and (min-width:40em){header.is-sticky .header__menu .menu__links{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}}header.is-sticky .header__menu .menu__links li{font-family:'National 2 Narrow Web',Helvetica,Arial,sans-serif;font-weight:700;text-transform:uppercase;margin-bottom:.5em;margin-right:.5em;font-size:20px}@media only screen and (min-width:30em){header.is-sticky .header__menu .menu__links li{font-size:24px}}header.is-sticky .header__menu a.patreon-link{font-family:'National 2 Narrow Web',Helvetica,Arial,sans-serif;font-weight:700;text-transform:uppercase;border:none;background-color:#f4f4f4;color:#282828;padding:.5em .75em}header.is-sticky .header__menu a.patreon-link:hover{opacity:.75}header.is-sticky .menu__patrons ul{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}header.is-sticky .menu__patrons li:after{display:inline;content:',';margin-right:.25em}header.is-sticky .menu__patrons li:last-of-type:after{content:'.'}header.is-sticky.is-dark{background-color:#282828;-webkit-box-shadow:0 0 7px 1px #5b5b5b;box-shadow:0 0 7px 1px #5b5b5b}header.is-sticky.is-dark svg path{fill:#f4f4f4}header.is-sticky.is-dark .header__menu{background-color:#fff;color:#282828}@media only screen and (min-width:30em){header.is-sticky.is-dark .header__menu{border-left:1px solid #e5e5e5}}header.is-sticky.is-dark a{color:#282828;border-bottom:1px solid #282828}header.is-sticky.is-dark a:hover{color:#5b5b5b}header.is-sticky.is-dark .header__toggle svg{stroke:#f4f4f4}header.is-sticky.is-dark .header__toggle.is-visible span svg{stroke:#282828}.intro{margin:0 auto;padding:0 1rem 3rem 1rem}.intro__hed{max-width:35rem;margin:0 auto 5rem auto;text-align:center;font-family:'Impact';text-transform:uppercase;font-size:200px;line-height:.9}.intro__byline{max-width:40rem;margin:0 auto 3rem auto;text-align:center;font-family:'National 2 Web';font-size:16px;line-height:1.65}.intro__image{position:relative;height:0;margin:0 auto 3rem 0;width:100%;padding-bottom:55%}.intro__image .layer1,.intro__image .layer2,.intro__image .layer3{border:7px solid #282828}.intro__image .layer1{position:absolute;top:70%;left:50%;margin-right:-50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);max-width:32%}.intro__image .layer2{position:absolute;top:12%;left:60%;max-width:35%}.intro__image .layer3{position:absolute;top:15%;left:5%;max-width:35%}.methods{width:100%;padding-bottom:7rem}.methods h3{max-width:40rem;padding:0 1rem;margin:0 auto;font-family:'Impact';text-transform:uppercase;font-size:18px;line-height:1.65;letter-spacing:.025rem}.methods .prose{font-size:14px;line-height:1.65}.other,.future{width:100%;margin-bottom:5rem}.other h2,.future h2{font-family:'Impact';text-transform:uppercase;font-size:150px;line-height:.9;max-width:30rem}.other .line,.future .line{width:100%;border-top:3px solid #f93a5b;margin-top:-.5rem;z-index:1000}.other .brief,.future .brief{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-top:-.9rem}.other .brief__male,.future .brief__male{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.other .brief .text,.future .brief .text{width:50%;font-family:'National 2 Web';padding-right:2rem}.other .brief .text .kicker,.future .brief .text .kicker{font-family:'Impact';color:#f93a5b;text-transform:uppercase;font-size:16px;line-height:1.65;letter-spacing:.025rem}.other .brief .text .row,.future .brief .text .row{width:100%;border-top:1px solid #e5e5e5;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.other .brief .text .row:last-of-type,.future .brief .text .row:last-of-type{border-bottom:1px solid #e5e5e5}.other .brief .text .row p,.future .brief .text .row p{font-size:14px;line-height:1.65;padding:0;margin:.75rem 0;font-family:Menlo,Consolas,Monaco,'Courier New',monospace;text-transform:uppercase;width:20%;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.other .brief .text .row .title,.future .brief .text .row .title{font-family:'Impact';font-size:16px;line-height:1.65;width:30%;color:#f93a5b;letter-spacing:.025rem}.other .brief .text .row .corr,.future .brief .text .row .corr{width:30%}.other .brief .text select,.future .brief .text select{border:none;width:6.3rem;background-color:rgba(229,229,229,0.5);-webkit-appearance:none;-moz-appearance:none;appearance:none;border-radius:0;font-weight:700;text-indent:.3rem;font-size:16px;line-height:1.65;background-image:url("assets/images/dropdown-arrow.png");background-repeat:no-repeat;background-position:100% 50%;background-size:25px 25px;cursor:pointer}.other .brief .text select:hover,.future .brief .text select:hover{background-color:#e5e5e5}.charts{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;width:100%;padding:3rem 0;height:auto}.charts.is-clipped{height:42rem;overflow:hidden}.btn-wrapper{width:10rem;margin:0 auto}.btn-wrapper .show-more{display:none;margin:2rem auto 7rem auto;background-color:rgba(229,229,229,0.5);height:3rem;width:100%;color:#5b5b5b;text-transform:uppercase;font-size:14px;line-height:1.65;font-weight:700}.btn-wrapper .show-more.is-visible{display:block}.btn-wrapper .show-more:hover{background-color:#e5e5e5;color:#282828}.chart__line{max-width:15rem;height:18rem;margin:1.5rem}.chart__line .chart-name{margin:0;font-family:'Impact';font-size:24px;text-transform:uppercase}.chart__line .chart-sub{font-family:Menlo,Consolas,Monaco,'Courier New',monospace;text-transform:uppercase;font-size:14px;margin:-.25rem 0 0 0}.chart__line .chart-sub span{font-family:'Impact';color:#f93a5b}.chart__line svg{margin-top:1rem}.chart__line .g-axis line{stroke:#e5e5e5;stroke-width:1px}.chart__line .g-axis text{color:#282828;font-family:Menlo,Consolas,Monaco,'Courier New',monospace}.chart__line .line{stroke-width:3px;fill:none}.chart__line .line-karen{stroke:rgba(148,148,148,0.75);fill:none;stroke-width:2px}.chart__line .annotations{font-family:Menlo,Consolas,Monaco,'Courier New',monospace;font-size:14px}.chart__line .annotations .annotation-note-title{fill:#f93a5b}.chart__line .annotations .connector{stroke:#f93a5b}.chart__line .annotations .connector-end{fill:#f93a5b;stroke:#f93a5b}.chart__line .annotations .annotation--Karen .annotation-note-title{fill:rgba(148,148,148,0.75)}.chart__line .annotations .annotation--Karen .connector{stroke:rgba(148,148,148,0.75)}.chart__line .annotations .annotation--Karen .connector-end{fill:rgba(148,148,148,0.75);stroke:rgba(148,148,148,0.75)}</style>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+	<style>
+		/*
+	        This font software is the property of Commercial Type.
+	
+	        You may not modify the font software, use it on another website, or install it on a computer.
+	
+	        License information is available at http://commercialtype.com/eula
+	        For more information please visit Commercial Type at http://commercialtype.com or email us at info[at]commercialtype.com
+	
+	        Copyright (C) 2017 Schwartzco Inc.
+	        License: 1704-GNCLGK
+	*/
+	
+		/*
+		********************
+			National
+		********************
+		*/
+	
+		@font-face {
+			font-family: 'National 2 Web';
+			src: url('https://pudding.cool/assets/fonts/national/National2Web-Regular.woff2') format('woff2'),
+			url('https://pudding.cool/assets/fonts/national/National2Web-Regular.woff') format('woff');
+			font-weight: 500;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+	
+		@font-face {
+			font-family: 'National 2 Web';
+			src: url('https://pudding.cool/assets/fonts/national/National2Web-Bold.woff2') format('woff2'),
+			url('https://pudding.cool/assets/fonts/national/National2Web-Bold.woff') format('woff');
+			font-weight: 700;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+	
+		/*
+		********************
+			National Narrow
+		********************
+		*/
+	
+		/*
+		@font-face {
+			font-family: 'National 2 Narrow Web';
+			src: url('https://pudding.cool/assets/fonts/national/National2NarrowWeb-Extralight.woff2') format('woff2'),
+			url('https://pudding.cool/assets/fonts/national/National2NarrowWeb-Extralight.woff') format('woff');
+			font-weight: 200;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+		*/
+		
+		@font-face {
+			font-family: 'National 2 Narrow Web';
+			src: url('https://pudding.cool/assets/fonts/national/National2NarrowWeb-Regular.woff2') format('woff2'),
+			url('https://pudding.cool/assets/fonts/national/National2NarrowWeb-Regular.woff') format('woff');
+			font-weight: 500;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+	
+		@font-face {
+			font-family: 'National 2 Narrow Web';
+			src: url('https://pudding.cool/assets/fonts/national/National2NarrowWeb-Bold.woff2') format('woff2'),
+			url('https://pudding.cool/assets/fonts/national/National2NarrowWeb-Bold.woff') format('woff');
+			font-weight: 700;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+	
+		/*
+		@font-face {
+			font-family: 'National 2 Narrow Web';
+			src: url('https://pudding.cool/assets/fonts/national/National2NarrowWeb-Black.woff2') format('woff2'),
+			url('https://pudding.cool/assets/fonts/national/National2NarrowWeb-Black.woff') format('woff');
+			font-weight: 900;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+		*/
+	
+		/*
+		********************
+			Tiempos Text
+		********************
+		*/
+	
+		@font-face {
+			font-family: 'Tiempos Text Web';
+			src: url('https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Regular.woff2') format('woff2'),
+			url('https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Regular.woff') format('woff');
+			font-weight: 500;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+	
+		@font-face {
+			font-family: 'Tiempos Text Web';
+			src: url('https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Bold.woff2') format('woff2'),
+			url('https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Bold.woff') format('woff');
+			font-weight: 700;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+	
+		/*
+		********************
+			Tiempos Headline
+		********************
+		*/
+	
+		/*
+		@font-face {
+			font-family: 'Tiempos Headline Web';
+			src: url('https://pudding.cool/assets/fonts/tiempos/TiemposHeadlineWeb-Regular.woff2') format('woff2'),
+			url('https://pudding.cool/assets/fonts/tiempos/TiemposHeadlineWeb-Regular.woff') format('woff');
+			font-weight: 500;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+		*/
+		
+		/*
+		********************
+			Publico Text
+		********************
+		*/
+		/*
+		@font-face {
+			font-family: 'Publico Text Web';
+			src: url('https://pudding.cool/assets/fonts/publico/PublicoText-Roman-Web.woff2') format('woff2'),
+			url('https://pudding.cool/assets/fonts/publico/PublicoText-Roman-Web.woff') format('woff');
+			font-weight: 400;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+	
+		@font-face {
+			font-family: 'Publico Text Web';
+			src: url('https://pudding.cool/assets/fonts/publico/PublicoText-Bold-Web.woff2') format('woff2'),
+			url('https://pudding.cool/assets/fonts/publico/PublicoText-Bold-Web.woff') format('woff');
+			font-weight: 700;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+		*/
+		
+		/*
+		********************
+			Atlas Grotesk
+		********************
+		*/
+	
+		/*
+		@font-face {
+			font-family: 'Atlas Grotesk Web';
+			src: url('https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Regular-Web.woff2') format('woff2'),
+			url('https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Regular-Web.woff') format('woff');
+			font-weight: 400;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+	
+		@font-face {
+			font-family: 'Atlas Grotesk Web';
+			src: url('https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Medium-Web.woff2') format('woff2'),
+			url('https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Medium-Web.woff') format('woff');
+			font-weight: 500;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+		
+		@font-face {
+			font-family: 'Atlas Grotesk Web';
+			src: url('https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Bold-Web.woff2') format('woff2'),
+			url('https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Bold-Web.woff') format('woff');
+			font-weight: 600;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+		*/
+	</style>
+	<script>
+	
+	</script>
+</head>
+
+<body>
+
+	<a href='#content' class='skip-to-main'>Skip to main content</a>
+	
+	<header class='is-sticky'>
+		<a href='https://pudding.cool' target='_blank' class='logo'>
+			<svg id="wordmark" x="0px" y="0px" style="enable-background:new 0 0 192.6 50;" xml:space="preserve" viewBox="0 0 192.6 50">
+<g>
+	<path class="st0" d="M150.1,9.5c1.5,0,2.8,1.3,2.8,2.8s-1.3,2.8-2.8,2.8s-2.8-1.3-2.8-2.8S148.6,9.5,150.1,9.5z"/>
+	<path class="st0" d="M147.2,17.3h5.6v18.2h-5.6V17.3z"/>
+	<path class="st0" d="M77.1,9.5h-1.9h-7v19.3v6.7h5.6v-6.7v-1.4h1.4h1.9c4.9,0,8.9-4,8.9-8.9S82.1,9.5,77.1,9.5z M77.1,21.8h-1.9
+		h-1.4v-1.4v-3.8v-1.4h1.4h1.9c1.8,0,3.3,1.5,3.3,3.3S79,21.8,77.1,21.8z"/>
+	<path class="st0" d="M105.7,17.6h-5.6v8.9c0,1.8-1.5,3.3-3.3,3.3s-3.3-1.5-3.3-3.3v-8.9h-5.6v8.9c0,4.9,4,8.9,8.9,8.9
+		s8.9-4,8.9-8.9V17.6z"/>
+	<path class="st0" d="M164.1,17.6c-4.9,0-8.9,4-8.9,8.9v8.9h5.6v-8.9c0-1.8,1.5-3.3,3.3-3.3s3.3,1.5,3.3,3.3v8.9h5.6v-8.9
+		C173,21.6,169,17.6,164.1,17.6z"/>
+	<path class="st0" d="M119.7,16.2v1.4h-1.4h-1.9c-4.9,0-8.9,4-8.9,8.9s4,8.9,8.9,8.9h1.9h7V16.2V9.5l-5.6,3.3
+		C119.7,12.8,119.7,16.2,119.7,16.2z M119.8,24.6v3.8v1.4h-1.4h-1.9c-1.8,0-3.3-1.5-3.3-3.3s1.5-3.3,3.3-3.3h1.9h1.4V24.6z"/>
+	<path class="st0" d="M139.3,16.2v1.4h-1.4H136c-4.9,0-8.9,4-8.9,8.9s4,8.9,8.9,8.9h1.9h7V16.2V9.5l-5.6,3.3V16.2z M139.4,24.6v3.8
+		v1.4h-1.5H136c-1.8,0-3.3-1.5-3.3-3.3s1.5-3.3,3.3-3.3h1.9h1.4v1.4H139.4z"/>
+	<path class="st0" d="M183.7,17.6c-4.9,0-8.9,4-8.9,8.9s4,8.9,8.9,8.9h1.9h1.4v1.4v0.9v1.4v1.4c0,1.8-1.5,3.3-3.3,3.3
+		s-3.3-1.5-3.3-3.3V38l-5.6,3.3c0.4,4.5,4.2,8.1,8.9,8.1c4.9,0,8.9-4,8.9-8.9v-1.4v-2.3V17.6h-7H183.7z M187,23.4v1.4v3.8V30h-1.4
+		h-1.9c-1.8,0-3.3-1.5-3.3-3.3s1.5-3.3,3.3-3.3h1.9C185.6,23.4,187,23.4,187,23.4z"/>
+	<path class="st0" d="M28.6,17.6c-1.2,0-2.3,0.2-3.3,0.6V9.5l-5.6,3.3v13.7v2v6.9h5.6v-6.9l0,0v-2c0-1.8,1.5-3.3,3.3-3.3
+		s3.3,1.5,3.3,3.3v8.9h5.6v-8.9C37.5,21.6,33.5,17.6,28.6,17.6z"/>
+	<path class="st0" d="M17.8,9.5H0v5.6h6.1v20.3h5.6V15.1h6.1V9.5z"/>
+	<path class="st0" d="M48.3,30.2c-0.4,0-1.2-0.1-1.8-0.4l5.2-2.1l5.6-2.3l-1-2.3l-0.1-0.2c-0.1-0.3-0.3-0.6-0.5-1
+		c-0.1-0.1-0.1-0.2-0.2-0.3c0,0,0-0.1-0.1-0.1l-0.1-0.1l-0.1-0.1c-1.6-2.2-4-3.5-6.7-3.7l0,0h-0.6c-4.9,0-8.9,4-8.9,8.9
+		c0,0.4,0,0.9,0.1,1.4l0,0V28c0,0,0,0,0,0.1c0,0,0,0,0,0.1c0,0.3,0.1,0.5,0.2,0.8v0.1v0.1c0.1,0.3,0.2,0.7,0.4,1v0.1v0.1
+		c0.1,0.3,0.3,0.5,0.4,0.8c0,0.1,0.1,0.1,0.1,0.2l0,0c0.1,0.2,0.3,0.4,0.4,0.6c0,0,0,0,0,0.1c0,0,0,0.1,0.1,0.1l0.1,0.1
+		c1.7,2.1,4.4,3.4,7.2,3.4h6.1v-5.2C54.5,30.2,50.6,30.2,48.3,30.2L48.3,30.2z M56.2,22.9L56.2,22.9L56.2,22.9z M44.6,25.7
+		L44.6,25.7l-0.2,0.1c0.2-1.9,1.8-3.5,3.7-3.5c0.9,0,1.8,0.4,2.4,0.9L46.2,25L44.6,25.7L44.6,25.7z"/>
+</g>
+</svg>
+		</a>
+		  <div class='header__menu tk-national'>
+		<p class='menu__tagline'><a href='https://pudding.cool' target='_blank'>The Pudding</a> explains ideas debated in culture with visual essays.</p>
+		<ul class='menu__links'>
+			<li><a href='https://pudding.cool/#new' target='_blank'>What’s New</a></li>
+			<li><a href='https://pudding.cool/#hits' target='_blank'>Greatest Hits</a></li>
+			<li><a href='https://pudding.cool/archives' target='_blank'>All Essays</a></li>
+			<li><a href='https://pudding.cool/about/' target='_blank'>About Us</a>
+		</ul>
+		<p class='menu__patreon'>We pour our ❤️ into these stories, but they take time and money. For just $2/month, you can help support us. Join our
+		growing community of data-driven enthusiasts.</p>
+		<a class='patreon-link' href='https://www.patreon.com/thepudding' target='_blank'>Help fund us</a>
+	
+	</div>
+	<button class='header__toggle'>
+		<span><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></span>
+		<span><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span>
+	</button> 
+		 
+	</header>
+	
+
+	<main id='content'>
+
+		<section class='intro'>
+			<!--
+			<div class='intro__image'>
+				<img class='layer3' src='/assets/images/layer3.png'></img>
+				<img class='layer2' src='/assets/images/layer2.png'></img>
+				<img class='layer1' src='/assets/images/layer1.png'></img>
+			</div>
+			-->
+			<div class='intro__image'>
+				<img class='layer3' src='/assets/images/opener-collage.jpg'></img>
+				<img class='layer2' src='/assets/images/opener-nametag.jpg'></img>
+				<img class='layer1' src='/assets/images/opener-face.jpg'></img>
+			</div>
+			<h1 class='intro__hed'>This Is Karen.</h1>
+			<p class='intro__byline'>By
+				<a href='https://pudding.cool/author/jan-diehm' target='_blank'>
+					<strong>Jan Diehm</strong>
+				</a>,
+				<a href='https://pudding.cool/author/sara-stoudt' target='_blank'>
+					<strong>Sara Stoudt</strong>
+				</a>, &amp;
+				<a href='https://pudding.cool/author/amber-thomas' target='_blank'>
+					<strong>Amber Thomas</strong>
+				</a>
+			</p>
+				<p class='prose'>You know Karen. You’ve seen her at <a href=https://knowyourmeme.com/memes/red-lobster-karen target=_blank>Red Lobster</a>, taking in a  <a href=https://www.reddit.com/r/FuckYouKaren/comments/gbnug0/karen_steals_ball_from_child/ target_blank>ball game</a>, <a href=https://www.washingtonpost.com/nation/2019/11/07/kidz-bop-karen-went-viral-on-camera-road-rage-lyft-passenger-she-targeted-calls-tirade-scary/ target=_blank>stuck in traffic</a>, and <a href=https://www.nytimes.com/2020/05/26/nyregion/amy-cooper-dog-central-park.html target=_blank>walking her dog</a> in Central Park.</p>
+				<p class='prose'>But how did Karen become <a href=https://www.urbandictionary.com/define.php?term=Karen target=_blank>Karen</a> — an entitled middle-aged white woman who needs to speak to the manager? According to baby name data from the <a href=https://www.ssa.gov/OACT/babynames/index.html target=_blank>Social Security Administration</a> (SSA), Karen first appeared in the female Top 20 in 1941 and spent 30 years there until it dropped out in 1971. By the 1990s, Karen had fallen out of the Top 100.</p>
+				<p class='prose'>Chances are you don’t know too many Karens today, but when Karen hit it’s peak at #3 in 1965 Karens were everywhere. It’s this swift decay in popularity that’s made Karen so era defining (like Patricia before her, and Shirley before her) and that’s why the name has found new notoriety as a <a href=https://knowyourmeme.com/memes/karen target=_blank>pejorative meme</a>. Karen has become the perfect caricature of women of a certain age and a certain privilege.</p>
+				<p class='prose'>Charting Karen’s trajectory got us thinking: are there other names that are equally as Karen as Karen? First we gathered baby names from 1918–2018. Then we dropped any name that never made it to the Top 20 (to account for popularity) and didn’t appear in the top list at least half of the years, or 50 out of 100 (to account for longevity). That left us with 129 female names and 76 male names (yes, we’re going there too!) to test correlation. Names that have a strong correlation, or above 0.7 were included. So, without further ado, introducing...</p>
+		</section>		<section class='other'>
+		    <h2>The Other</h2>
+		    <div class='line'></div>
+		    <div class='brief brief__female'>
+		        <h2>Karens</h2>
+		        <div class='text'>
+		            <p><span class=kicker>Female Karens</span> Recently there’s been debate about if Karen is a racist or sexist slur akin to using the n-word. We’re here to tell you it’s not. Don’t believe us? Take <a href=https://www.washingtonpost.com/opinions/2020/04/28/karen-memes-jokes-arent-sexist-or-racist-let-karen-explain/?arc404=true target_blank>it from a Karen</a> herself. But, if you’re seriously tired of seeing the name Karen everywhere, we’ve got you covered. Here are the names to use instead. (Our apologies to all the Deborahs, Debbies, and Debras.)</p>
+		            <div class='row'>
+		                <p class='title'>Your best replacement</p>
+		                <p>Kathy</p>
+		                <p class='corr'>Correlation: 0.91</p>
+		            </div>
+		            <div class='row'>
+		                <p class='title'>The current anti-Karen</p>
+		                <p>Amelia</p>
+		                <p class='corr'>Correlation: -0.71</p>
+		            </div>
+		        </div>
+		    </div>
+		    <div class='chart-wrapper'>
+		        <div class='charts charts__female is-clipped' data-gender='F' data-time='current'></div>
+		        <div class='btn-wrapper' data-gender='F' data-time='current'>
+		            <button class='show-more is-visible'>
+		                Show all
+		            </button>
+		        </div>
+		    </div>
+		
+		    <div class='brief brief__male'>
+		        <div class='text'>
+		            <p><span class=kicker>Male Karens</span> Karen is largely reserved for women (white women), but is there a male equivalent? Maybe it’s <a href=https://www.urbandictionary.com/define.php?term=%22IAN%22%20%28male%20Karen%29 target=_blank>Ian</a>, like Urban Dictionary suggests. Or maybe it’s <a href=https://www.instagram.com/p/B9sEEMOJnLC/ target=_blank>Rand</a> of Middle Class Fancy fame. Or maybe it’s simply <a href=https://melmagazine.com/en-us/story/karen-has-a-husband-and-his-name-is-greg target=_blank>Greg</a>. Wrong, it’s definitely one of these names.</p>
+		            <div class='row'>
+		                <p class='title'>Your best replacement</p>
+		                <p>David</p>
+		                <p class='corr'>Correlation: 0.84</p>
+		            </div>
+		            <div class='row'>
+		                <p class='title'>The current anti-Karen</p>
+		                <p>Liam</p>
+		                <p class='corr'>Correlation: -0.90</p>
+		            </div>
+		        </div>
+		    </div>
+		    <div class='chart-wrapper'>
+		        <div class='charts charts__male' data-gender='M' data-time='current'></div>
+		        <div class='btn-wrapper' data-gender='M' data-time='current'>
+		            <button class='show-more'>
+		                Show all
+		            </button>
+		        </div>
+		    </div>
+		
+		    <div class='line'></div>
+		</section>		<section class='compare'>
+		    <p class='prose'>Now you know which names have the potential to become tomorrow’s next viral punchline, but what about the next generation of Karens. Is it really Becky?</p>
+		    <p class='prose'>Looking ahead 10, 20, and 30 years, we’ve calculated which names have a similar trajectory and strong correlation to Karen.</p>
+		    <div class='search-container'>
+		        <div class='directions'>
+		            <p class='title'>Am I a future Karen?</p>
+		            <p>Search a name to see if it's in danger</p>
+		        </div>
+		        <label for='my-autocomplete'>Search for a name</label>
+		        <div class='autocomplete' id='autocomplete'>
+		        </div>
+		
+		    </div>
+		    <div class='table-container'>
+		        <div class='table table__female'>
+		            <h3>Female Names</h3>
+		            <table data-gender='F'></table>
+		        </div>
+		        <div class='table table__male'>
+		            <h3>Male Names</h3>
+		            <table data-gender='M'></table>
+		        </div>
+		    </div>
+		</section>		<section class='future'>
+		    <h2>The Future</h2>
+		    <div class='line'></div>
+		    <div class='brief brief__female'>
+		        <h2>Karens</h2>
+		        <div class='text'>
+		            <p><span class=kicker>Female Karens</span> Turns out, it’s not “<a href=https://www.huffpost.com/entry/bbq-becky-911-calls-grill_n_5b8c0f07e4b0162f4724a74c target=_blank>BBQ Becky</a>” or “<a href=https://www.urbandictionary.com/define.php?term=Becky%20with%20the%20good%20hair target=_blank>Becky with the good hair</a>” that you’ll need to watch out for in <select id=female-select data-gender=F></select>.</p>
+		            <div class='row'>
+		                <p class='title'>The Karen in <span class='year-change'>10</span> years</p>
+		                <p class='name' data-condition='top'>Hailey</p>
+		                <p class='corr' data-condition='top'>Correlation: 0.87</p>
+		            </div>
+		            <div class='row'>
+		                <p class='title'>The future anti-Karen</p>
+		                <p class='name' data-condition='bottom'>Kathy</p>
+		                <p class='corr' data-condition='bottom'>Correlation: -0.91</p>
+		            </div>
+		        </div>
+		    </div>
+		    <div class='chart-wrapper'>
+		        <div class='charts charts__female' data-gender='F' data-time='future'></div>
+		        <div class='btn-wrapper' data-gender='F' data-time='future'>
+		            <button class='show-more'>
+		                Show all
+		            </button>
+		        </div>
+		    </div>
+		
+		    <div class='brief brief__male'>
+		        <div class='text'>
+		            <p><span class=kicker>Male Karens</span> Of course we’re future proofing you for male names too. Here are ones in the danger zone in <select id=male-select data-gender=M></select>.</p>
+		            <div class='row' data-condition='top'>
+		                <p class='title'>The Karen in <span class='year-change'>10</span> years</p>
+		                <p class='name' data-condition='top'>Liam</p>
+		                <p class='corr' data-condition='top'>Correlation: 0.91</p>
+		            </div>
+		            <div class='row' data-condition='bottom'>
+		                <p class='title'>The future anti-Karen</p>
+		                <p class='name' data-condition='bottom'>Ronald</p>
+		                <p class='corr' data-condition='bottom'>Correlation: -0.87</p>
+		            </div>
+		        </div>
+		    </div>
+		    <div class='chart-wrapper'>
+		        <div class='charts charts__male' data-gender='M' data-time='future'></div>
+		        <div class='btn-wrapper' data-gender='M' data-time='future'>
+		            <button class='show-more'>
+		                Show all
+		            </button>
+		        </div>
+		    </div>
+		
+		    <div class='line'></div>
+		</section>		<section class='methods'>
+		    <h3>Methods</h3>
+				<p class='prose'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in urna sit amet tortor ullamcorper pulvinar. Vivamus ut urna lobortis, pulvinar mi non, lobortis nulla. Pellentesque consequat molestie pulvinar. Suspendisse dignissim aliquam velit.</p>
+				<p class='prose'>Aenean in purus at orci ullamcorper facilisis quis sit amet urna. Cras sed molestie elit. Mauris tempus ante vitae lectus sodales consectetur. Integer non nulla ullamcorper, pharetra libero vel, imperdiet diam. Aenean vel tincidunt purus. Donec ac ex est. Donec molestie ut ipsum nec ultrices. Cras at ligula sapien.</p>
+				<p class='prose'>Donec facilisis libero nec ex suscipit, in porttitor erat malesuada. Donec leo lectus, egestas at nunc ut, suscipit laoreet nulla. Sed pharetra dignissim purus, et pretium purus commodo sit amet. Cras odio arcu, scelerisque at justo a, fermentum faucibus odio.</p>
+		</section>
+	</main>
+
+	<footer class='pudding-footer'>
+	
+		<div class='footer-recirc'>
+			<div class='footer-recirc__articles'></div>
+		</div>
+	
+		<div class='footer-company'>
+			<div class='footer-company__cta'>
+				<ul class='footer-company__cta-list'>
+					<li>
+						<a href='https://facebook.com/pudding.viz/'>
+							<svg width="24" height="24" fill="#000000" stroke="currentColor" stroke-width=".2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+							<p>FACEBOOK</p>
+						</a>
+					</li>
+					<li>
+						<a href='https://twitter.com/puddingviz/'>
+							<svg width="24" height="24" fill="#000" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+							<p>TWITTER</p>
+						</a>
+					</li>
+					<li>
+						<a href='https://www.instagram.com/the.pudding'>
+							<svg width="24" height="24" id="Layer_1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve" viewBox="0 0 24 24">
+<path d="M17,23H7c-3.3,0-6-2.7-6-6V7c0-3.3,2.7-6,6-6h10c3.3,0,6,2.7,6,6v10C23,20.3,20.3,23,17,23z M7,3C4.8,3,3,4.8,3,7v10
+	c0,2.2,1.8,4,4,4h10c2.2,0,4-1.8,4-4V7c0-2.2-1.8-4-4-4H7z"/>
+<path d="M12,17c-1.1,0-2.1-0.3-3-1c-1.1-0.8-1.8-2-2-3.3C6.7,10,8.6,7.4,11.3,7c0.5-0.1,1-0.1,1.5,0c2.2,0.3,3.9,2,4.2,4.2l0,0
+	c0.2,1.3-0.1,2.6-0.9,3.7c-0.8,1.1-2,1.8-3.3,2C12.5,16.9,12.3,17,12,17z M12,9c-0.1,0-0.3,0-0.4,0c-1.6,0.2-2.8,1.8-2.5,3.4
+	c0.2,1.6,1.8,2.8,3.4,2.5c0.8-0.1,1.5-0.5,2-1.2s0.7-1.4,0.6-2.2l0,0c-0.2-1.3-1.2-2.3-2.5-2.5C12.3,9,12.2,9,12,9z"/>
+<path d="M17.5,7.5c-0.3,0-0.5-0.1-0.7-0.3c-0.1-0.1-0.2-0.2-0.2-0.3c-0.1-0.1-0.1-0.2-0.1-0.4c0-0.3,0.1-0.5,0.3-0.7
+	c0.4-0.4,1-0.4,1.4,0c0.2,0.2,0.3,0.4,0.3,0.7c0,0.1,0,0.3-0.1,0.4s-0.1,0.2-0.2,0.3C18,7.4,17.8,7.5,17.5,7.5z"/>
+</svg>
+							<p>INSTAGRAM</p>
+						</a>
+					</li>
+					<li>
+						<a href='https://patreon.com/thepudding/'>
+							<svg id="Layer_1" width="24" height="24" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve" viewBox="0 0 24 24">
+<g>
+
+		<path fill-rule="evenodd" clip-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" d="
+		M15.7,3.3c-3.7,0-6.8,3-6.8,6.8c0,3.7,3,6.7,6.8,6.7c3.7,0,6.7-3,6.7-6.7C22.4,6.3,19.4,3.3,15.7,3.3"/>
+
+		<rect x="3.7" y="3.3" stroke-linecap="round" stroke-linejoin="round" width="3.3" height="18"/>
+</g>
+</svg>
+							<p>PATREON</p>
+						</a>
+					</li>
+					<li>
+						<a href='https://pudding.cool/about'>
+							<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="8"></line></svg>
+							<p>ABOUT</p>
+						</a>
+					</li>
+					<li>
+						<a href='https://pudding.cool/privacy/'>
+							<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+							<p>PRIVACY</p>
+						</a>
+					</li>
+					<li>
+						<a href='http://eepurl.com/czym6f'>
+							<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+							<p>NEWSLETTER</p>
+						</a>
+					</li>
+					<li>
+						<a href='https://pudding.cool/feed/index.xml'>
+							<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss" viewBox="0 0 24 24"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+							<p>RSS</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+	
+			<div class='footer-company__about'>
+				<svg id="wordmark" x="0px" y="0px" style="enable-background:new 0 0 192.6 50;" xml:space="preserve" viewBox="0 0 192.6 50">
+<g>
+	<path class="st0" d="M150.1,9.5c1.5,0,2.8,1.3,2.8,2.8s-1.3,2.8-2.8,2.8s-2.8-1.3-2.8-2.8S148.6,9.5,150.1,9.5z"/>
+	<path class="st0" d="M147.2,17.3h5.6v18.2h-5.6V17.3z"/>
+	<path class="st0" d="M77.1,9.5h-1.9h-7v19.3v6.7h5.6v-6.7v-1.4h1.4h1.9c4.9,0,8.9-4,8.9-8.9S82.1,9.5,77.1,9.5z M77.1,21.8h-1.9
+		h-1.4v-1.4v-3.8v-1.4h1.4h1.9c1.8,0,3.3,1.5,3.3,3.3S79,21.8,77.1,21.8z"/>
+	<path class="st0" d="M105.7,17.6h-5.6v8.9c0,1.8-1.5,3.3-3.3,3.3s-3.3-1.5-3.3-3.3v-8.9h-5.6v8.9c0,4.9,4,8.9,8.9,8.9
+		s8.9-4,8.9-8.9V17.6z"/>
+	<path class="st0" d="M164.1,17.6c-4.9,0-8.9,4-8.9,8.9v8.9h5.6v-8.9c0-1.8,1.5-3.3,3.3-3.3s3.3,1.5,3.3,3.3v8.9h5.6v-8.9
+		C173,21.6,169,17.6,164.1,17.6z"/>
+	<path class="st0" d="M119.7,16.2v1.4h-1.4h-1.9c-4.9,0-8.9,4-8.9,8.9s4,8.9,8.9,8.9h1.9h7V16.2V9.5l-5.6,3.3
+		C119.7,12.8,119.7,16.2,119.7,16.2z M119.8,24.6v3.8v1.4h-1.4h-1.9c-1.8,0-3.3-1.5-3.3-3.3s1.5-3.3,3.3-3.3h1.9h1.4V24.6z"/>
+	<path class="st0" d="M139.3,16.2v1.4h-1.4H136c-4.9,0-8.9,4-8.9,8.9s4,8.9,8.9,8.9h1.9h7V16.2V9.5l-5.6,3.3V16.2z M139.4,24.6v3.8
+		v1.4h-1.5H136c-1.8,0-3.3-1.5-3.3-3.3s1.5-3.3,3.3-3.3h1.9h1.4v1.4H139.4z"/>
+	<path class="st0" d="M183.7,17.6c-4.9,0-8.9,4-8.9,8.9s4,8.9,8.9,8.9h1.9h1.4v1.4v0.9v1.4v1.4c0,1.8-1.5,3.3-3.3,3.3
+		s-3.3-1.5-3.3-3.3V38l-5.6,3.3c0.4,4.5,4.2,8.1,8.9,8.1c4.9,0,8.9-4,8.9-8.9v-1.4v-2.3V17.6h-7H183.7z M187,23.4v1.4v3.8V30h-1.4
+		h-1.9c-1.8,0-3.3-1.5-3.3-3.3s1.5-3.3,3.3-3.3h1.9C185.6,23.4,187,23.4,187,23.4z"/>
+	<path class="st0" d="M28.6,17.6c-1.2,0-2.3,0.2-3.3,0.6V9.5l-5.6,3.3v13.7v2v6.9h5.6v-6.9l0,0v-2c0-1.8,1.5-3.3,3.3-3.3
+		s3.3,1.5,3.3,3.3v8.9h5.6v-8.9C37.5,21.6,33.5,17.6,28.6,17.6z"/>
+	<path class="st0" d="M17.8,9.5H0v5.6h6.1v20.3h5.6V15.1h6.1V9.5z"/>
+	<path class="st0" d="M48.3,30.2c-0.4,0-1.2-0.1-1.8-0.4l5.2-2.1l5.6-2.3l-1-2.3l-0.1-0.2c-0.1-0.3-0.3-0.6-0.5-1
+		c-0.1-0.1-0.1-0.2-0.2-0.3c0,0,0-0.1-0.1-0.1l-0.1-0.1l-0.1-0.1c-1.6-2.2-4-3.5-6.7-3.7l0,0h-0.6c-4.9,0-8.9,4-8.9,8.9
+		c0,0.4,0,0.9,0.1,1.4l0,0V28c0,0,0,0,0,0.1c0,0,0,0,0,0.1c0,0.3,0.1,0.5,0.2,0.8v0.1v0.1c0.1,0.3,0.2,0.7,0.4,1v0.1v0.1
+		c0.1,0.3,0.3,0.5,0.4,0.8c0,0.1,0.1,0.1,0.1,0.2l0,0c0.1,0.2,0.3,0.4,0.4,0.6c0,0,0,0,0,0.1c0,0,0,0.1,0.1,0.1l0.1,0.1
+		c1.7,2.1,4.4,3.4,7.2,3.4h6.1v-5.2C54.5,30.2,50.6,30.2,48.3,30.2L48.3,30.2z M56.2,22.9L56.2,22.9L56.2,22.9z M44.6,25.7
+		L44.6,25.7l-0.2,0.1c0.2-1.9,1.8-3.5,3.7-3.5c0.9,0,1.8,0.4,2.4,0.9L46.2,25L44.6,25.7L44.6,25.7z"/>
+</g>
+</svg>
+				<p class='footer-company__description'><a href='https://pudding.cool'>The Pudding</a> is a digital publication
+					that
+					explains ideas debated in culture with visual essays.</p>
+				<p class='footer-company__trademark'>The Pudding<span>®</span> is made in Brooklyn, NY; Seattle, WA; San Antonio,
+					TX; and Great
+					Barrington, MA.</p>
+			</div>
+	
+		</div>
+	</footer>
+
+
+	<script src='https://pudding.cool/assets/scripts/d3.v5.12.0.min.js'></script>
+	<script src='main.js?version=1590771704238' async></script>
+</body>
+
+</html>
