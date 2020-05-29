@@ -39,7 +39,7 @@ function unshiftImage() {
 
 
 function init() {
-    parallaxImage()
+    //parallaxImage()
     $introImage.on('mouseover', shiftImage)
     $introImage.on('mouseleave', unshiftImage)  
 }

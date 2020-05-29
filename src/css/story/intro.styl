@@ -20,26 +20,30 @@
 	&__image
 		position relative
 		height 0
-		margin 0 auto
+		margin 0 auto 3rem 0
 		width 100%
 		padding-bottom 55%	
-		max-width 80rem
 
 		.layer1, .layer2, .layer3
-			top 0
-			left 0
-			width 100%
-			position absolute
-			transition 0.1s ease-in	
+			border 7px solid $off-black
 
 		.layer1
-			&.shifted
-				transform rotate(5deg) scale(1.05)
+			position absolute
+			top 70%
+			left 50%
+			margin-right -50%
+			transform translate(-50%, -50%)
+			max-width 32%
 
 		.layer2
-			&.shifted
-				transform rotate(-2deg) scale(.95)
+			position absolute
+			top 12%
+			left 60%
+			max-width 35%
 
 		.layer3
-			&.shifted
-				transform rotate(2deg) scale(.95)					
+			position absolute
+			top 15%
+			left 5%
+			max-width 35%
+							
