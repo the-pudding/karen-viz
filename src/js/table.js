@@ -79,7 +79,7 @@ function setupTableBody(userInput) {
       });
       tableData = setupData(chartGender).concat(userSpans);
 
-      console.log({ userCorr, tableData, userSpans });
+      //console.log({ userCorr, tableData, userSpans });
     } else tableData = setupData(chartGender);
 
     const row = table
@@ -99,9 +99,9 @@ function setupTableBody(userInput) {
         let match = null;
         if (findName === userInput) match = 'nameMatch';
         else match = 'noMatch';
-        const num = split.slice(1, 2)[0].substring(12, 15);
+        let num = split.slice(1, 2)[0].substring(12, 15);
         const dangerKaren = num >= 0.7;
-        console.log({ dangerKaren, num });
+        //console.log({ dangerKaren, num });
         return dangerKaren
           ? `${findName} ${match} danger`
           : `${findName} ${match}`;
@@ -112,7 +112,7 @@ function setupTableBody(userInput) {
 function setupTypeFunctionality() {
   const onlyNames = data.map((d) => d.name);
 
-  console.log({ $input });
+  //console.log({ $input });
   // const onlyNames = ['Amber', 'Parker', 'Pixel'];
   Autocomplete({
     element: document.querySelector('#autocomplete'),
@@ -121,7 +121,7 @@ function setupTypeFunctionality() {
     displayMenu: 'overlay',
     confirmOnBlur: false,
     onConfirm(name) {
-      console.log({ name });
+      //console.log({ name });
       setupTableBody(name);
     },
   });
@@ -133,7 +133,7 @@ function init(res) {
   data = res;
   setupTableHeader();
   setupTypeFunctionality();
-  console.log({ data });
+  //console.log({ data });
 }
 
 export default { init, resize };

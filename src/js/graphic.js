@@ -122,7 +122,7 @@ function updateTables(years) {
   corrF.each(function (corr) {
     const thisCorr = d3.select(this);
     const cond = thisCorr.attr('data-condition');
-    thisCorr.text(`Correlation: ${femaleData[cond].corr}`);
+    thisCorr.text(`Corr: ${femaleData[cond].corr}`);
   });
 
   const namesM = $maleTable.selectAll('.name');
@@ -136,11 +136,13 @@ function updateTables(years) {
   corrM.each(function (corr) {
     const thisCorr = d3.select(this);
     const cond = thisCorr.attr('data-condition');
-    thisCorr.text(`Correlation: ${maleData[cond].corr}`);
+    thisCorr.text(`Corr: ${maleData[cond].corr}`);
   });
 }
 
 function handleDropdown() {
+  d3.selectAll('.future .show-more').text('Show All');
+
   const val = d3.select(this).property('value');
 
   $futureContainers.each(function (d) {
@@ -235,7 +237,7 @@ function handleButtonClick() {
   btn.text(text);
   chart.classed('is-clipped', !expanded);
 
-  console.log(expanded);
+  //console.log(expanded);
 
   // if (expanded) {
   //   const y = +btn.attr('data-y');

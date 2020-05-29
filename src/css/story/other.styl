@@ -5,28 +5,49 @@
     h2
         font-family 'Impact'
         text-transform uppercase
-        set-type-size('lil-daddy', true)
-        max-width 30rem
+        set-type-size('xxxxx-large', true)
+        line-height 0.9
+        max-width 10rem
+        padding 0 1rem
+        +mq('bp-3')
+            max-width 20rem
+            set-type-size('x6-large', true)
+        +mq('bp-5')
+            padding 0
+        +mq('bp-6')
+            set-type-size('lil-daddy', true)
+            max-width 30rem
         
     .line
         width 100%
         border-top 3px solid $karen-red
-        margin-top -0.5rem
+        margin-top -0.2rem
         z-index set-index('overlay')
+        +mq('bp-3')
+            margin-top -0.35rem
+        +mq('bp-6')
+            margin-top -0.5rem
 
     .brief
         display flex
-        flex-direction row  
+        flex-direction column  
         justify-content space-between  
         margin-top -0.9rem
+        +mq('bp-5')
+            flex-direction row
 
         &__male
            justify-content flex-end 
 
         .text
-            width 50%
+            width 100%
             font-family $national
-            padding-right 2rem
+            padding 0 1rem
+            max-width $column-width
+            margin 0 auto
+            +mq('bp-5')
+                padding 0 0 2rem 0
+                width 50%
 
             .kicker
                 font-family 'Impact'
@@ -39,9 +60,15 @@
                 width 100%
                 border-top 1px solid $gray-light
                 display flex
-                flex-direction row
-                justify-content space-between
-                align-items center
+                flex-direction column
+                justify-content flex-start
+                align-items flex-start
+                padding 0.75rem 0
+                +mq('bp-3')
+                  flex-direction row
+                  align-items center
+                  justify-content space-between 
+                  padding 0 
 
                 &:last-of-type
                   border-bottom 1px solid $gray-light  
@@ -49,21 +76,32 @@
                 p
                     set-type-size('small', true)
                     padding 0
-                    margin 0.75rem 0
+                    margin 0
                     font-family $mono
                     text-transform uppercase
-                    width 20% 
+                    width 100%
                     justify-content space-between
+                    +mq('bp-3')
+                      margin 0.75rem 0
+                      width 18% 
+
+                a
+                    &:hover
+                        color $karen-purple  
 
                 .title
                     font-family 'Impact'
                     set-type-size('root', true) 
-                    width 30%
+                    width 100%
                     color $karen-red 
                     letter-spacing 0.025rem
+                    +mq('bp-3')
+                        width 40%
 
                 .corr
-                    width 30% 
+                    width 100% 
+                    +mq('bp-3')
+                        width 22%
 
             select
                 border none  
