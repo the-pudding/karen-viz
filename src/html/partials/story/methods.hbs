@@ -1,5 +1,16 @@
-<section class='methods'>
-    <h3>Methods</h3>
+<section class='methods' id='data-link'>
+	<h3>Acknowledgements</h3>
+	{{#each copy.acknowledgements}}
+		<p class='prose'>{{{value}}}</p>
+	{{/each}}
+
+	<ul>
+	{{#each copy.resources}}
+		<li>{{{value}}}</li>
+	{{/each}}
+	</ul>
+
+    <h3>Methodology</h3>
 	{{#each copy.methods}}
 		<p class='prose'>{{{value}}}</p>
 	{{/each}}
