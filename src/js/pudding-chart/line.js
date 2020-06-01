@@ -121,8 +121,15 @@ d3.selection.prototype.karenLine = function init(options) {
       // called once at start
       init() {
         // add specific name data
-        $chart.append('p').attr('class', 'chart-name');
-        $chart.append('p').attr('class', 'chart-sub');
+        if (data.key !== 'Karen') {
+          $chart.append('p').attr('class', 'chart-name');
+          $chart.append('p').attr('class', 'chart-sub');
+        } else {
+          $chart
+            .append('p')
+            .attr('class', 'chart-sub-karen')
+            .text('Proportion of Babies Named Karen Per Year');
+        }
 
         // add an SVG
         $svg = $chart.append('svg').attr('class', 'chart-line');
@@ -167,12 +174,14 @@ d3.selection.prototype.karenLine = function init(options) {
         $vis.attr('transform', `translate(${MARGIN_LEFT}, ${MARGIN_TOP})`);
 
         // add Karen line
-        $vis
-          .selectAll('.line-karen')
-          .data([data.karen], () => data.key)
-          .join((enter) =>
-            enter.append('path').attr('class', 'line-karen').attr('d', line)
-          );
+        if (data.key !== 'Karen') {
+          $vis
+            .selectAll('.line-karen')
+            .data([data.karen], () => data.key)
+            .join((enter) =>
+              enter.append('path').attr('class', 'line-karen').attr('d', line)
+            );
+        }
 
         $vis
           .selectAll('.line')
@@ -223,18 +232,21 @@ d3.selection.prototype.karenLine = function init(options) {
 
         // add annotations to first chart of section
         if (i === 0) {
-          const year =
-            data.key === 'Danielle' || data.key === 'Matthew' ? 1997 : 2000;
-          const { prop } = data.values.filter((d) => d.year === year)[0];
+          if (data.key !== 'Karen') {
+            const year =
+              data.key === 'Danielle' || data.key === 'Matthew' ? 1997 : 2000;
+            const { prop } = data.values.filter((d) => d.year === year)[0];
 
-          // add annotation for this name
-          addAnnotation(year, prop, data.key, data.key);
+            // add annotation for this name
+            addAnnotation(year, prop, data.key, data.key);
+
+            const karenYear = 1945;
+            const karenProp = data.karen.filter((d) => d.year === karenYear)[0]
+              .prop;
+            addAnnotation(karenYear, karenProp, 'Karen', data.key);
+          }
 
           // add annotation for Karen
-          const karenYear = 1945;
-          const karenProp = data.karen.filter((d) => d.year === karenYear)[0]
-            .prop;
-          addAnnotation(karenYear, karenProp, 'Karen', data.key);
         }
 
         return Chart;

@@ -1,20 +1,21 @@
 <section class='intro'>
 	<div class='intro__image'>
 		<div class='layer3'>
-			<img src='assets/images/opener-collage.png' alt='wagging finger, live laugh love sign, large purse, white wine glass'></img>
+			<img src='assets/images/opener-collage.png'
+				alt='wagging finger, live laugh love sign, large purse, white wine glass'></img>
 			<div class='bg'></div>
-			<div class='bg'></div>		
+			<div class='bg'></div>
 		</div>
 		<div class='layer2'>
 			<img src='assets/images/opener-nametag.png' alt='hello name name is tag'></img>
 			<div class='bg'></div>
-			<div class='bg'></div>		
+			<div class='bg'></div>
 		</div>
 		<div class='layer1'>
 			<img src='assets/images/opener-face.png' alt='kate plus 8 hair cut silhouette'></img>
 			<div class='bg'></div>
 			<div class='bg'></div>
-			<div class='bg'></div>			
+			<div class='bg'></div>
 		</div>
 	</div>
 	<h1 class='intro__hed'>{{{meta.title}}}</h1>
@@ -30,9 +31,11 @@
 		</a>
 	</p>
 	{{#each copy.intro}}
-		<p class='prose'>{{{value}}}</p>
+	<p class='prose'>{{{value}}}</p>
 	{{/each}}
-	<div class='karen-chart'></div>
+	<div class='chart-wrapper'>
+		<div class='charts charts__karen' data-gender='K' data-time='K'></div>
+	</div>
 	{{#each copy.intro2}}
 		<p class='prose'>{{{value}}}</p>
 	{{/each}}
