@@ -60,7 +60,7 @@
 
 
         .table 
-            width 100%
+            width 15rem
             border-spacing 4rem
             display flex
             flex-direction column
@@ -72,12 +72,13 @@
 
             h3
                 font-family Impact
-                set-type-size('xx-large', true)
+                set-type-size('x-large', true)
                 text-transform uppercase  
                 text-align left
+                border-bottom 5px solid $karen-red
 
             table
-                width 100%
+                min-width 15rem
                 margin 4.5rem 0 0 0
                 +mq('bp-4') 
                     width calc(100% - 3.5rem) 
@@ -87,7 +88,6 @@
                 width 100%
                 display flex
                 flex-direction row
-                border-bottom 1px solid $gray-light
 
                 .col10, .col20, .col30
                     display flex
@@ -107,31 +107,21 @@
                 +mq('bp-4')
                     set-type-size('small', true) 
 
-                .num
-                    font-family Impact
-                    set-type-size('x-small', true)
-                    margin 0.75rem 0.5rem 0.75rem 0
-                    letter-spacing 0.025rem
-                    +mq('bp-4')
-                        set-type-size('small', true) 
-
-            .row--10, .nameMatch
-                background-color rgba($gray-light, 0.5)    
+            .corr, .years
+                font-family Impact
+                set-type-size('x-small', true)
+                margin 0.75rem 0.5rem 0.75rem 0
+                letter-spacing 0.025rem
+                +mq('bp-4')
+                    set-type-size('small', true) 
                 
-                &.danger
-                    .num
-                        color $karen-red        
+            .danger 
+                .corr 
+                    color $karen-red   
 
-            thead
-                border-bottom 3px solid $karen-red
+            .years 
+                border-bottom none  
 
-                th
-                    font-family Impact
-                    set-type-size('large', true)
-                    margin 0  
-                    text-transform uppercase 
-                    letter-spacing 0.025rem  
-                    padding 0 0.5rem      
                 
     /* Input styling */
 

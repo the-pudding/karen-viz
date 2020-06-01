@@ -82,7 +82,7 @@ function setupTableBody(userInput) {
         .data(tableData)
         .join((enter) =>
           enter.append('tr').attr('class', (e, i) => {
-            const dangerKaren = e.corr >= 0.7;
+            const dangerKaren = +e.corr >= 0.7;
             return dangerKaren ? `row--${i} danger` : `row--${i}`;
           })
         );
@@ -92,7 +92,7 @@ function setupTableBody(userInput) {
         .data(getRowData)
         .join((enter) => enter.append('td').attr('class', (d) => d.title))
         .text((d, i) => {
-          if (d.title === 'years') return `In ${(d.years + 1) * 10} Years`;
+          if (d.title === 'years') return `In ${(d.years + 1) * 10} Yrs`;
           return d.value;
         });
     }
