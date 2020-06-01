@@ -46,18 +46,24 @@
         max-width 65rem
         margin 0 auto   
         display flex
-        flex-direction column
+        flex-direction row
         justify-content space-between
+        flex-wrap wrap
         padding 0 1rem
         +mq('bp-5')
             flex-direction row
+
+        .user-message 
+            display none 
+            &.is-visible 
+                display inline-block
 
 
         .table 
             width 100%
             border-spacing 4rem
             display flex
-            justify-content flex-end
+            flex-direction column
             position relative
             margin 0 0 3rem 0
             +mq('bp-5')
@@ -68,18 +74,7 @@
                 font-family Impact
                 set-type-size('xx-large', true)
                 text-transform uppercase  
-                transform rotate(0deg)
-                transform-origin 0 0  
-                position absolute
-                top 0
-                left 0
                 text-align left
-                width 15rem
-                +mq('bp-4')
-                    set-type-size('xxx-large', true) 
-                    transform rotate(-90deg)
-                    margin 15rem 0 0 0
-                    text-align right
 
             table
                 width 100%
