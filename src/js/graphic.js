@@ -62,6 +62,19 @@ function setupCalloutData() {
 }
 
 function filterData(gender, time) {
+  let nestedNames = null;
+  if (gender === 'K') {
+    nestedNames = [
+      {
+        corr: 0.1,
+        key: 'Karen',
+        values: karen,
+        karen,
+      },
+    ];
+
+    return nestedNames;
+  }
   const current = time === 'current';
   // first, find matches for the time frame & time frame
 
@@ -86,7 +99,7 @@ function filterData(gender, time) {
   const filteredNames = annual.filter((d) => justNames.includes(d.name));
 
   // nest the data so we can make one chart per name
-  const nestedNames = d3
+  nestedNames = d3
     .nest()
     .key((d) => d.name)
     .entries(filteredNames)
@@ -100,6 +113,8 @@ function filterData(gender, time) {
 
       return added;
     });
+
+  console.log({ nestedNames });
 
   return nestedNames;
 }
@@ -153,33 +168,33 @@ function handleDropdown() {
     );
 
     // if there are more than 2 rows, clip container and show button
-    const windowWidth = $future.node().offsetWidth;
-    const graphicWidth = 255;
-    const graphicPerRow = windowWidth / graphicWidth;
-    const tooMany = filtered.length > graphicPerRow * 2;
+    // const windowWidth = $future.node().offsetWidth;
+    // const graphicWidth = 255;
+    // const graphicPerRow = windowWidth / graphicWidth;
+    // const tooMany = filtered.length > graphicPerRow * 2;
 
-    const btn = d3.select(this.parentNode).select('button');
+    // const btn = d3.select(this.parentNode).select('button');
 
-    $sel.classed('is-clipped', tooMany);
-    btn.classed('is-visible', tooMany);
+    // $sel.classed('is-clipped', tooMany);
+    // btn.classed('is-visible', tooMany);
 
-    // remove old charts
-    $sel.selectAll('.chart__line').remove();
+    // // remove old charts
+    // $sel.selectAll('.chart__line').remove();
 
-    // create new ones
-    const theseCharts = $sel
-      .selectAll('.chart__line')
-      .data(filtered)
-      .join((enter) => enter.append('div').attr('class', 'chart__line'))
-      .karenLine();
+    // // create new ones
+    // const theseCharts = $sel
+    //   .selectAll('.chart__line')
+    //   .data(filtered)
+    //   .join((enter) => enter.append('div').attr('class', 'chart__line'))
+    //   .karenLine();
 
-    theseCharts.forEach((chart, i) => chart.resize().render(i));
+    // theseCharts.forEach((chart, i) => chart.resize().render(i));
 
-    // change both dropdowns to match
-    $dropdowns.selectAll('option').property('selected', (d) => d === +val);
+    // // change both dropdowns to match
+    // $dropdowns.selectAll('option').property('selected', (d) => d === +val);
 
-    // change spans in table to match
-    d3.selectAll('.year-change').text(val);
+    // // change spans in table to match
+    // d3.selectAll('.year-change').text(val);
   });
 
   updateTables(val);
@@ -193,21 +208,32 @@ function setupChart() {
   const passYear = chartTime === 'current' ? 'current' : '10';
 
   // filter specific data for this section and sort by decreasing correlation
-  const filtered = filterData(chartGender, passYear).sort((a, b) =>
-    d3.descending(a.corr, b.corr)
-  );
+  const filtered = filterData(chartGender, passYear);
 
-  const theseCharts = $sel
-    .selectAll('.chart__line')
-    .data(filtered)
-    .join((enter) => enter.append('div').attr('class', 'chart__line'))
-    .karenLine();
+  if (filtered.length > 1) {
+    const sorted = filtered.sort((a, b) => d3.descending(a.corr, b.corr));
+    const theseCharts = $sel
+      .selectAll('.chart__line')
+      .data(sorted)
+      .join((enter) => enter.append('div').attr('class', 'chart__line'))
+      .karenLine();
 
-  theseCharts.forEach((chart, i) => chart.resize().render(i));
+    console.log({ sorted });
 
-  const id = `${chartGender}-${chartTime}`;
+    theseCharts.forEach((chart, i) => chart.resize().render(i));
 
-  charts.push([theseCharts]);
+    const id = `${chartGender}-${chartTime}`;
+
+    charts.push([theseCharts]);
+  } else {
+    const thisChart = $sel
+      .selectAll('.chart__line')
+      .data(filtered)
+      .join((enter) => enter.append('div').attr('class', 'chart__line'))
+      .karenLine();
+    console.log({ thisChart, $sel, filtered });
+    thisChart.resize().render(0);
+  }
 }
 
 function resize() {}
@@ -237,7 +263,7 @@ function handleButtonClick() {
   btn.text(text);
   chart.classed('is-clipped', !expanded);
 
-  //console.log(expanded);
+  // console.log(expanded);
 
   // if (expanded) {
   //   const y = +btn.attr('data-y');
