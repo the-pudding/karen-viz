@@ -4,11 +4,9 @@
 
     .search-container
         max-width $column-width
-        margin 0 auto 5rem auto
+        margin 0 auto 3rem auto
         padding 1rem
         font-family $national
-        +mq('bp-4')
-            margin 0 auto 7rem auto
 
         .instruction
             font-style italic  
@@ -50,30 +48,37 @@
     .table-container
         width 100%
         max-width 65rem
-        margin 0 auto   
+        margin 0 auto 3rem auto   
         display flex
-        flex-direction row
+        flex-direction column
+        align-items center
         justify-content space-between
         flex-wrap wrap
         padding 0 1rem
         +mq('bp-5')
             flex-direction row
+            justify-content space-between
 
         .user-message 
             display none 
             &.is-visible 
                 display inline-block
+                font-family $national
+                color $gray-dark
+                font-style italic
+                set-type-size('small', true)
 
 
         .table 
-            width 15rem
+            width 100%
+            max-width 25rem
             border-spacing 4rem
             display flex
             flex-direction column
             position relative
             margin 0 0 3rem 0
             +mq('bp-5')
-                width 48%
+                width 30%
                 margin 0
 
             h3
@@ -85,9 +90,9 @@
 
             table
                 min-width 15rem
-                margin 4.5rem 0 0 0
+                margin 0
                 +mq('bp-4') 
-                    width calc(100% - 3.5rem) 
+                    width 100% 
                     margin 0
 
             .row
@@ -106,7 +111,7 @@
             td 
                 font-family $mono 
                 text-transform uppercase
-                set-type-size('x-small', true) 
+                set-type-size('small', true) 
                 margin 0.75rem 0
                 padding 0.5rem 0.5rem
                 border-bottom 1px solid $gray-light
@@ -115,18 +120,24 @@
 
             .corr, .years
                 font-family Impact
-                set-type-size('x-small', true)
+                set-type-size('small', true)
                 margin 0.75rem 0.5rem 0.75rem 0
                 letter-spacing 0.025rem
                 +mq('bp-4')
                     set-type-size('small', true) 
+
+            .corr
+                text-align right 
+                color $gray-dark       
                 
             .danger 
                 .corr 
-                    color $karen-red   
+                    color $karen-red 
 
             .years 
-                border-bottom none  
+                border-bottom none
+                width 4.5rem 
+                padding 0.75rem 0 
 
                 
     /* Input styling */

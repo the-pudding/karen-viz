@@ -128,7 +128,7 @@ d3.selection.prototype.karenLine = function init(options) {
           $chart
             .append('p')
             .attr('class', 'chart-sub-karen')
-            .text('Proportion of Babies Named Karen Per Year');
+            .text('Proportion of Babies Named Karen');
         }
 
         // add an SVG
