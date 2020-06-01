@@ -79,7 +79,7 @@ function setupTableBody(userInput) {
       const row = table
         .select('tbody')
         .selectAll('tr')
-        .data(tableData)
+        .data(tableData, (e) => e.name)
         .join((enter) =>
           enter.append('tr').attr('class', (e, i) => {
             const dangerKaren = +e.corr >= 0.7;
