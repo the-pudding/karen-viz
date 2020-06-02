@@ -29,10 +29,14 @@ const gifImages = {
   'rand': 'assets/images/gifs/rand.gif',
   'donald': 'assets/images/gifs/donald.gif',
   'bbqBecky': 'assets/images/gifs/bbqbecky.gif',
-  'goodHair': 'assets/images/gifs/beckwiththegoodhair.gif'
+  'goodHair': 'assets/images/gifs/beckywiththegoodhair.gif',
+  'positiveKaren': 'assets/images/gifs/positiveKaren.png',
+  'ogBecky': 'assets/images/gifs/ogbecky.gif',
+  'managerKaren': 'assets/images/gifs/managerkaren.gif'
 }
 
-function showGifTips(){
+function showGifTips(e){
+  console.log(e)
   const gifID = this.id
   
   $tooltip
