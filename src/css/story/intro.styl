@@ -56,6 +56,8 @@
 		max-width 60rem
 		+mq('bp-5')
 			margin 0 auto 3rem auto	
+		+mq('bp-7')
+			padding-bottom 45%		
 
 		.layer1
 			position absolute
@@ -96,3 +98,8 @@
 						transform origin center	
 
 							
+@keyframes layer1-animation {
+	0% {transform: rotate(0deg) scale(1);}
+	50% {transform: rotate(5deg) scale(1.05);}
+	100% {transform: rotate(0deg) scale(1);}
+}
