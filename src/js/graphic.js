@@ -12,12 +12,41 @@ const $dropdowns = $future.selectAll('select');
 const $buttons = d3.selectAll('.show-more');
 const $femaleTable = $future.select('.brief__female');
 const $maleTable = $future.select('.brief__male');
+const $gifTips = d3.selectAll('.gifTip');
+const $tooltip = d3.selectAll('.tooltip');
 
 // data
 let annual = null;
 let corr = null;
 let karen = null;
 let allExtremes = null;
+
+const gifImages = {
+  'redLobster': 'assets/images/gifs/redlobsterkaren.gif',
+  'ballGame': 'assets/images/gifs/ballgamekaren.gif',
+  'kidzBop': 'assets/images/gifs/kidzbopkaren.gif',
+  'centralPark': 'assets/images/gifs/centralparkkaren.gif',
+  'rand': 'assets/images/gifs/rand.gif',
+  'donald': 'assets/images/gifs/donald.gif',
+  'bbqBecky': 'assets/images/gifs/bbqbecky.gif',
+  'goodHair': 'assets/images/gifs/beckwiththegoodhair.gif'
+}
+
+function showGifTips(){
+  const gifID = this.id
+  
+  $tooltip
+    .classed('is-visible', true)
+    .style('left', (d3.event.pageX) + 'px')
+    .style('top', (d3.event.pageY) + 'px')
+    .style('background-image', `url('${gifImages[gifID]}')`)
+    
+   console.log(gifImages[gifID]) 
+}
+
+function hideGifTips() {
+  $tooltip.classed('is-visible', false)
+}
 
 const cutoff = 0.7;
 
@@ -114,7 +143,7 @@ function filterData(gender, time) {
       return added;
     });
 
-  console.log({ nestedNames });
+  //console.log({ nestedNames });
 
   return nestedNames;
 }
@@ -218,7 +247,7 @@ function setupChart() {
       .join((enter) => enter.append('div').attr('class', 'chart__line'))
       .karenLine();
 
-    console.log({ sorted });
+    //console.log({ sorted });
 
     theseCharts.forEach((chart, i) => chart.resize().render(i));
 
@@ -231,7 +260,7 @@ function setupChart() {
       .data(filtered)
       .join((enter) => enter.append('div').attr('class', 'chart__line'))
       .karenLine();
-    console.log({ thisChart, $sel, filtered });
+    //console.log({ thisChart, $sel, filtered });
     thisChart.resize().render(0);
   }
 }
@@ -281,6 +310,8 @@ function init(data) {
   setupCalloutData();
   updateTables(10);
   $buttons.on('click', handleButtonClick);
+  $gifTips.on('mouseover', showGifTips);
+  $gifTips.on('mouseout', hideGifTips);
 }
 
 export default { init, resize };
