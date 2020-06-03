@@ -9,9 +9,14 @@
         </div>
         <label for='my-autocomplete'>Search for a name</label>
         <div class='autocomplete' id='autocomplete'></div>
-        <p class='instruction'>If you don't see your name in the search, your name did not appear in our data.</p>
+        <p class='instruction'>If you don't see your name in the search, your name did not appear in our data. Names with <span class='red'>red</span> numbers below have strong correlations (above 0.7) to the name Karen.</p>
     </div>
     <div class='table-container'>
+        <div class='table table__user'>
+            <h3>Your Name</h3>
+            <p class='user-message is-visible'>Search for your name above</p>
+            <table data-gender='U'></table>
+        </div>
         <div class='table table__female'>
             <h3>Top Female Names</h3>
             <table data-gender='F'></table>
@@ -19,11 +24,6 @@
         <div class='table table__male'>
             <h3>Top Male Names</h3>
             <table data-gender='M'></table>
-        </div>
-        <div class='table table__user'>
-            <h3>Your Name</h3>
-            <p class='user-message is-visible'>Search for your name above</p>
-            <table data-gender='U'></table>
         </div>
     </div>
 </section>

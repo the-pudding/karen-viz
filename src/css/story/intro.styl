@@ -22,7 +22,7 @@
 
 	&__hed
 		max-width 25rem
-		margin 0 auto 3rem auto
+		margin 0 auto 2rem auto
 		text-align center
 		font-family $impact
 		text-transform uppercase
@@ -32,7 +32,19 @@
 			set-type-size('lil-daddy', true)
 		+mq('bp-5')
 			set-type-size('big-daddy', true)
-			margin 0 auto 5rem auto
+
+	&__subhed
+		max-width 35rem
+		margin 0 auto 5rem auto
+		font-family $national
+		text-align center
+		set-type-size('medium', true)
+		padding 0 1rem
+		+mq('bp-3')
+			set-type-size('large', true)
+		+mq('bp-5')
+			set-type-size('x-large', true)
+			max-width 39rem	
 		
 	&__byline
 		max-width $column-width
@@ -76,7 +88,7 @@
 		.layer2
 			position absolute
 			top 12%
-			left 60%
+			left 58%
 			max-width 40%
 
 			img

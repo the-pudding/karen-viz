@@ -12,7 +12,11 @@
             font-style italic  
             set-type-size('small', true)
             color $gray-dark
-            margin 0.5rem 0 0 0      
+            margin 0.5rem 0 0 0  
+
+            .red
+                color $karen-red
+                font-weight 700    
 
         .directions
             display flex
@@ -67,8 +71,11 @@
                 font-family $national
                 color $gray-dark
                 font-style italic
+                background-color $off-white
                 set-type-size('small', true)
-
+                margin 0
+                padding 1.5rem
+                height 100%
 
         .table 
             width 100%
@@ -78,6 +85,7 @@
             flex-direction column
             position relative
             margin 0 0 3rem 0
+            height 13rem
             +mq('bp-5')
                 width 30%
                 margin 0
