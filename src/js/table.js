@@ -101,9 +101,7 @@ function setupTableBody(userInput) {
 
 function setupTypeFunctionality() {
   const onlyNames = data.map((d) => d.name);
-
-  // console.log({ $input });
-  // const onlyNames = ['Amber', 'Parker', 'Pixel'];
+  
   Autocomplete({
     element: document.querySelector('#autocomplete'),
     id: 'my-autocomplete',
@@ -111,7 +109,6 @@ function setupTypeFunctionality() {
     displayMenu: 'overlay',
     confirmOnBlur: false,
     onConfirm(name) {
-      // console.log({ name });
       setupTableBody(name);
     },
   });
@@ -123,7 +120,6 @@ function init(res) {
   data = res;
   setupTableHeader();
   setupTypeFunctionality();
-  // console.log({ data });
 }
 
 export default { init, resize };

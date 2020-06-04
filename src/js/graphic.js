@@ -36,7 +36,6 @@ const gifImages = {
 }
 
 function showGifTips(e){
-  console.log(e)
   const gifID = this.id
   
   $tooltip
@@ -44,8 +43,6 @@ function showGifTips(e){
     .style('left', (d3.event.pageX) + 'px')
     .style('top', (d3.event.pageY) + 'px')
     .style('background-image', `url('${gifImages[gifID]}')`)
-    
-   console.log(gifImages[gifID]) 
 }
 
 function hideGifTips() {
@@ -146,9 +143,6 @@ function filterData(gender, time) {
 
       return added;
     });
-
-  //console.log({ nestedNames });
-
   return nestedNames;
 }
 
@@ -201,33 +195,33 @@ function handleDropdown() {
     );
 
     // if there are more than 2 rows, clip container and show button
-    // const windowWidth = $future.node().offsetWidth;
-    // const graphicWidth = 255;
-    // const graphicPerRow = windowWidth / graphicWidth;
-    // const tooMany = filtered.length > graphicPerRow * 2;
+    const windowWidth = $future.node().offsetWidth;
+    const graphicWidth = 255;
+    const graphicPerRow = windowWidth / graphicWidth;
+    const tooMany = filtered.length > graphicPerRow * 2;
 
-    // const btn = d3.select(this.parentNode).select('button');
+    const btn = d3.select(this.parentNode).select('button');
 
-    // $sel.classed('is-clipped', tooMany);
-    // btn.classed('is-visible', tooMany);
+    $sel.classed('is-clipped', tooMany);
+    btn.classed('is-visible', tooMany);
 
-    // // remove old charts
-    // $sel.selectAll('.chart__line').remove();
+    // remove old charts
+    $sel.selectAll('.chart__line').remove();
 
-    // // create new ones
-    // const theseCharts = $sel
-    //   .selectAll('.chart__line')
-    //   .data(filtered)
-    //   .join((enter) => enter.append('div').attr('class', 'chart__line'))
-    //   .karenLine();
+    // create new ones
+    const theseCharts = $sel
+      .selectAll('.chart__line')
+      .data(filtered)
+      .join((enter) => enter.append('div').attr('class', 'chart__line'))
+      .karenLine();
 
-    // theseCharts.forEach((chart, i) => chart.resize().render(i));
+    theseCharts.forEach((chart, i) => chart.resize().render(i));
 
-    // // change both dropdowns to match
-    // $dropdowns.selectAll('option').property('selected', (d) => d === +val);
+    // change both dropdowns to match
+    $dropdowns.selectAll('option').property('selected', (d) => d === +val);
 
-    // // change spans in table to match
-    // d3.selectAll('.year-change').text(val);
+    // change spans in table to match
+    d3.selectAll('.year-change').text(val);
   });
 
   updateTables(val);
@@ -251,8 +245,6 @@ function setupChart() {
       .join((enter) => enter.append('div').attr('class', 'chart__line'))
       .karenLine();
 
-    //console.log({ sorted });
-
     theseCharts.forEach((chart, i) => chart.resize().render(i));
 
     const id = `${chartGender}-${chartTime}`;
@@ -264,7 +256,6 @@ function setupChart() {
       .data(filtered)
       .join((enter) => enter.append('div').attr('class', 'chart__line'))
       .karenLine();
-    //console.log({ thisChart, $sel, filtered });
     thisChart.resize().render(0);
   }
 }
@@ -295,8 +286,6 @@ function handleButtonClick() {
   const text = expanded ? 'Show Fewer' : 'Show All';
   btn.text(text);
   chart.classed('is-clipped', !expanded);
-
-  // console.log(expanded);
 
   // if (expanded) {
   //   const y = +btn.attr('data-y');
