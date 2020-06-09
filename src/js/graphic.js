@@ -30,7 +30,7 @@ const gifImages = {
   'donald': 'assets/images/gifs/donald.gif',
   'bbqBecky': 'assets/images/gifs/bbqbecky.gif',
   'goodHair': 'assets/images/gifs/beckywiththegoodhair.gif',
-  'positiveKaren': 'assets/images/gifs/positiveKaren.png',
+  'positiveKaren': 'assets/images/gifs/positivekaren.png',
   'ogBecky': 'assets/images/gifs/ogbecky.gif',
   'managerKaren': 'assets/images/gifs/managerkaren.gif'
 }
