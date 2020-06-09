@@ -4,8 +4,37 @@
 		<p class='prose'>{{{value}}}</p>
 	{{/each}}
 
+	<h5>Articles</h5>
 	<ul>
-	{{#each copy.resources}}
+	{{#each copy.resourcesArticles}}
+		<li>{{{value}}}</li>
+	{{/each}}
+	</ul>
+
+	<h5>Books</h5>
+	<ul>
+	{{#each copy.resourcesBooks}}
+		<li>{{{value}}}</li>
+	{{/each}}
+	</ul>
+
+	<h5>Film &amp; Audio</h5>
+	<ul>
+	{{#each copy.resourcesFilm}}
+		<li>{{{value}}}</li>
+	{{/each}}
+	</ul>
+
+	<h5>Social Media Slides</h5>
+	<ul>
+	{{#each copy.resourcesSocial}}
+		<li>{{{value}}}</li>
+	{{/each}}
+	</ul>
+
+	<h5>Educational Guides</h5>
+	<ul>
+	{{#each copy.resourcesSocial}}
 		<li>{{{value}}}</li>
 	{{/each}}
 	</ul>
