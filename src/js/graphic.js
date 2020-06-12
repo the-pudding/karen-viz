@@ -219,9 +219,6 @@ function handleDropdown() {
 
     // change both dropdowns to match
     $dropdowns.selectAll('option').property('selected', (d) => d === +val);
-
-    // change spans in table to match
-    d3.selectAll('.year-change').text(val);
   });
 
   updateTables(val);
