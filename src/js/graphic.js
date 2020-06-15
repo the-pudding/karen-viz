@@ -23,7 +23,7 @@ let allExtremes = null;
 
 const gifImages = {
   'redLobster': 'assets/images/gifs/redlobsterkaren.gif',
-  'ballGame': 'assets/images/gifs/ballgamekaren.gif',
+  'pool': 'assets/images/gifs/poolkaren.gif',
   'kidzBop': 'assets/images/gifs/kidzbopkaren.gif',
   'centralPark': 'assets/images/gifs/centralparkkaren.gif',
   'rand': 'assets/images/gifs/rand.gif',
@@ -32,7 +32,8 @@ const gifImages = {
   'goodHair': 'assets/images/gifs/beckywiththegoodhair.gif',
   'positiveKaren': 'assets/images/gifs/positivekaren.png',
   'ogBecky': 'assets/images/gifs/ogbecky.gif',
-  'managerKaren': 'assets/images/gifs/managerkaren.gif'
+  'managerKaren': 'assets/images/gifs/managerkaren.gif',
+  'chalking': 'assets/images/gifs/propertykaren.gif'
 }
 
 function showGifTips(e){
